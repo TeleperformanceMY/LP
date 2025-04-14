@@ -1,12 +1,15 @@
-/* Reset and general styles */
-body {
-    font-family: sancola system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+/* Reset and base styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
     color: #333;
-    background: url('GMT_TP_Wave_Sep23_PurplePink2.png') repeat-y center top / 100% auto;
-    animation: bugfix infinite 1s;
-    -webkit-animation: bugfix infinite 1s;
+    background-color: #f9f9f9;
 }
 
 /* Header styles */
@@ -14,21 +17,21 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
-    box-shadow: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 100;
 }
 
 .logo img {
     height: 50px;
 }
 
+/* Navigation styles */
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    align-items: center;
 }
 
 nav ul li {
@@ -39,526 +42,277 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #333;
-    font-weight: bold;
-    padding: 10px;
-    position: relative;
-}
-.logo-icon {
-    width: 20px;
-    height: auto;
-    margin-right: 10px;
-    vertical-align: middle;
+    font-weight: 600;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
 }
 
-/* Arrow styles */
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    top: calc(50% + 3px);
-    right: 0;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid transparent;
-    transition: transform 0.3s ease, border-top-color 0.3s ease;
-}
-nav ul li a::before {
-    content: '';
-    position: absolute;
-    top: calc(50% + 3px);
-    right: 0;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #ff0082;
-    transition: transform 0.3s ease, border-top-color 0.3s ease;
+nav ul li a:hover {
+    color: #000;
 }
 
-nav ul li a::before {
-    top: 50%;
-}
-
-nav ul li a:hover::after,
-nav ul li a:hover::before {
-    border-top-color: #ff0082;
-    transform: translateY(-50%) rotate(180deg);
-}
-
-nav ul li .dropdown {
-    display: none;
+/* Dropdown styles */
+.dropdown {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: whitesmoke;
-    box-shadow: none;
-    z-index: 10;
+    background-color: #fff;
+    width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 nav ul li:hover .dropdown {
-    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
-nav ul li .dropdown li {
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li .dropdown li a {
+.dropdown li a {
     padding: 10px 20px;
-    display: block;
-    color: #333;
-    font-weight: normal;
-    white-space: nowrap;
+    border-bottom: 1px solid #eee;
 }
 
-nav ul li .dropdown li a:hover {
-    background-color: transparent;
-}
-
+/* Contact button */
 .contact-us {
-    color: #fff;
-    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
+    background-color: #000;
+    color: #fff !important;
     border-radius: 5px;
+    padding: 10px 20px !important;
 }
 
-/* Intro section styles */
+/* Main content styles */
 .intro {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    background-color: transparent;
-    flex-wrap: wrap;
+    padding: 50px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .intro-text {
     flex: 1;
-    padding: 0px;
-    background-color: transparent;
+    padding-right: 30px;
 }
 
 .intro-text h1 {
-    font-size: 70px;
-    font-weight: bold;
-    color: #333;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
-.intro-text .highlight {
-    font-size: 100px;
-    color: #ff0082;
-    background: #ff0082 ;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
+.highlight {
+    color: #000;
+    font-weight: 800;
 }
 
 .intro-video {
-    flex: 2;
-    max-width: 66%;
-    border: 10px solid #FF0082;
-    border-radius: 10px;
-    background-color: transparent;
+    flex: 1;
+    border: 5px solid #000;
 }
 
 /* Job section styles */
 .job-section {
-    position: relative;
     display: flex;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.hot-job, .find-job {
     padding: 20px;
-    background-color: rgba(255,255,255,0.9);
-    flex-wrap: wrap;
-}
-
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('GMT_TP_Wave_Sep23_PurplePink.png') no-repeat center center;
-    background-size: cover;
-    opacity: 0.3;
-    z-index: -1;
-}
-.container {
-    display: flex;
-    align-items: center;
-}
-
-.generate-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 10px;
 }
 
 .hot-job {
     flex: 1;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    background-color: transparent;
-    border-radius: 10px;
-    width: 33%;
+    border-right: 1px solid #eee;
 }
 
 .find-job {
     flex: 2;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    background-color: transparent;
-    border-radius: 10px;
-    width: 66%;
 }
 
-.hot-job h2, .find-job h2 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.hot-job h1, .find-job h1 {
-    color: #333;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.hot-job p, .find-job p {
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.highlighted-word {
-    color: #ff0082;
-    font-weight: bold;
-}
-
+/* Form styles */
 .dropdowns {
-    display: flex;
-    flex-direction: column;
     margin-bottom: 20px;
 }
 
 .dropdowns label {
-    margin-bottom: 10px;
-    color: #555;
-    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
 .dropdowns select {
+    width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    width: 100%;
+    margin-bottom: 15px;
 }
 
-.apply-btn {
-    display: inline-block;
-    padding: 10px 20px;
+hr {
     border: none;
-    color: white;
-    cursor: pointer;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+
+/* Button styles */
+.apply-btn, .generate-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
     font-size: 16px;
-    width: 100%;
-}
-
-.generate-btn {
-    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
-}
-
-.apply-btn {
-    background: -webkit-linear-gradient(0deg, #7A2180 16.67%, #E40276 95.31%);  
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .apply-btn:hover, .generate-btn:hover {
-    background: linear-gradient(45deg, #ff6b6b, #ff0082);
+    background-color: #333;
 }
 
-/* Modal Styles */
+.highlighted-word {
+    font-weight: 800;
+    color: #000;
+}
+
+/* Modal styles */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.7);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: left;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 90%;
     position: relative;
 }
 
 .close {
-    color: #aaa;
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 20px;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+    font-size: 24px;
     cursor: pointer;
-}
-
-#job-url {
-    color: #ff0082;
-    display: block;
-    margin: 10px 0;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-#job-url:hover {
-    text-decoration: underline;
 }
 
 #qr-code {
-    display: block;
     margin: 20px auto;
-}
-
-.message {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 999;
+    display: block;
 }
 
 .share-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 15px;
-    justify-content: center;
-    background-color: transparent;
-}
-
-.share-buttons h2 {
-    flex: 0 0 auto;
-    margin-right: 10px;
-}
-
-.share-buttons button {
-    padding: 12px;
-    font-size: 24px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    margin-top: 20px;
     text-align: center;
 }
 
-#share-button-whatsapp {
-    background-image: url('image (11)-Photoroom.png');
-    background-repeat: no-repeat;
-    background-size: 24px;
-}
-
-#share-button-line {
-    background-image: url('output-onlinepngtools-Photoroom.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-#share-button-facebook {
-    background-image: url('fbpiink-removebg-preview.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-#share-button-IG {
-    background-image: url('igpinnk-removebg-preview.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-#share-button-TikTok {
-    background-image: url('tiktokpink-removebg-preview.png');
-    background-repeat: no-repeat;
-    background-size: contain;
+.share-buttons h2 {
+    margin-bottom: 15px;
 }
 
 /* Footer styles */
 footer {
-    padding: 10px 20px;
-    text-align: center;
-    background-color: rgba(66, 66, 66, 0.9);
-    color: white;
-    position: relative;
-    margin-top: 50px;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 30px;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    margin-top: 50px;
 }
 
-.footer-left, .footer-right {
-    margin: 0;
-}
-
-/* Mobile menu styles */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.menu-wrapper {
-    display: flex;
-}
-
+/* Mobile styles */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
     }
 
     .menu-wrapper {
         position: fixed;
         top: 0;
-        left: -100%;
-        width: 250px;
-        height: 100%;
-        background-color: white;
-        border-right: 1px solid #ddd;
-        transition: left 0.3s ease;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
         z-index: 1000;
+        padding-top: 70px;
         overflow-y: auto;
-        flex-direction: column;
     }
 
     .menu-wrapper.open {
-        left: 0;
+        right: 0;
     }
 
-    nav ul.desktop-menu {
-        display: block;
-        padding: 0;
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
         margin: 0;
-    }
-
-    nav ul.desktop-menu > li {
-        padding: 15px 20px;
-        border-bottom: 1px solid #ddd;
-        background-color: #f9f9f9;
-        display: block;
-        text-align: left;
-        box-sizing: border-box;
-        margin-bottom: 10px;
-        position: relative;
-    }
-
-    nav ul.desktop-menu > li > a {
-        display: block;
-        line-height: 1.5;
-    }
-
-    nav ul.desktop-menu .dropdown {
-        display: none;
-        position: static;
-        background-color: #fff;
-        box-shadow: none;
-    }
-
-    nav ul.desktop-menu .language-dropdown .dropdown {
-        display: block;
-    }
-
-    nav ul.desktop-menu .dropdown li {
-        padding: 10px 20px;
         border-bottom: 1px solid #eee;
+    }
+
+    nav ul li a {
+        padding: 15px 20px;
+    }
+
+    .dropdown {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+    }
+
+    nav ul li:hover .dropdown {
+        display: block;
     }
 
     .intro {
         flex-direction: column;
+        padding: 30px 20px;
     }
 
-    .intro-video {
-        max-width: 100%;
+    .intro-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .intro-text h1 {
+        font-size: 2.5rem;
     }
 
     .job-section {
         flex-direction: column;
+        padding: 20px;
     }
 
-    .intro-text h1 {
-        font-size: 30px;
-    }
-    
-    .intro-text .highlight {
-        font-size: 50px;
-    }
-
-    .hot-job, .find-job {
-        width: 100%;
-        padding: 10px;
-        margin: 5px 0;
-    }
-
-    .hot-job h1, .find-job h1 {
-        font-size: 14px;
-    }
-
-    .hot-job p, .find-job p {
-        font-size: 14px;
-    }
-
-    .apply-btn, .generate-btn {
-        width: 100%;
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .dropdowns label {
-        font-size: 14px;
-    }
-
-    .dropdowns select {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    .modal-content {
-        width: 90%;
-        margin: 20% auto;
-        padding: 10px;
-    }
-
-    .close {
-        font-size: 24px;
-        top: 5px;
-        right: 10px;
-    }
-
-    #job-url {
-        font-size: 16px;
+    .hot-job {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 20px;
     }
 }
