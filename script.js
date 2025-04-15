@@ -204,7 +204,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize with current language
     const currentLanguage = getLanguageFromUrl();
     updateContent(currentLanguage);
+     // Ensure jsonData is available
+            if (!jsonData) {
+                alert('Failed to fetch job data. Please try again later.');
+                return;
+            }
 
+            const jobData = jsonData.find(item => item.Language === selectedLanguage && item.Location === selectedLocation && item.Positions === selectedJob);
+
+            if (jobData) {
+                // Get utm_source and utm_medium from current URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const sourceParam = urlParams.get('utm_source') || '';
+                const mediumParam = urlParams.get('utm_medium') || '';
+
+                const finalLink = generateFinalURL(jobData["Evergreen link"], sourceParam, mediumParam);
+                openQrModal(finalLink);
+            } else {
+                alert('Error! Please remember to select all options before you generate your QR code.');
+            }
+        });
+    } else {
+        console.error('#generate-btn button not found.');
+    }
     // Job data and dropdown functionality
     let jsonData = [];
     const languageSelect = document.getElementById('language-select');
@@ -214,8 +236,15 @@ document.addEventListener('DOMContentLoaded', function() {
     async function loadJobData(lang = 'en') {
     try {
         const response = await fetch('data.json');
-        if (!response.ok) throw new Error('Network response was not ok');
+        if (!response.ok) throw new Error('Failed to fetch job data');
         jsonData = await response.json();
+         .then(data => {
+            jsonData = data; // Assign fetched data to jsonData
+        })
+        .catch(error => {
+            console.error('Error fetching job data:', error);
+            alert('Failed to fetch job data. Please try again later.');
+        });
         populateDropdowns();
         setHotJob(lang);
     } catch (error) {
@@ -232,6 +261,13 @@ document.addEventListener('DOMContentLoaded', function() {
             populateDropdowns();
         }
 }
+
+
+
+
+
+
+
 
     // Set hot job based on language
     function setHotJob(lang) {
