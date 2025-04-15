@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Error loading job data:', error);
                 alert(languages[getLanguageFromUrl()]?.no_job_found || 'Failed to load job data. Using default data instead.');
                 // Fallback to default data
-                jsonData = [
+/*                jsonData = [
                     {
                         "Positions": "Customer Success Specialist",
                         "Language": "Japanese",
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         "Evergreen title": "Sales Consultant - Malay - KL",
                         "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49426/sales-consultant---malay---kl/job?mode=job&iis=LandingPage&iisn="
                     }
-                ];
+                ]; */
                 populateDropdowns();
                 setHotJob(getLanguageFromUrl());
             });
