@@ -12,135 +12,827 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teleperformance Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #ffffff;
+            --accent-color: #333333;
+            --text-color: #333333;
+            --light-gray: #f8f9fa;
+            --border-color: #e0e0e0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+        }
+        
+        .dropdown-item {
+            padding: 0.5rem 1.5rem;
+        }
+        
+        .contact-us {
+            background-color: var(--primary-color);
+            color: var(--secondary-color) !important;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1.5rem !important;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-us:hover {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-title .highlight {
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+        
+        .hero-video {
+            border: 5px solid var(--primary-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Job Section */
+        .job-section {
+            padding: 5rem 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .hot-job-card, .find-job-card {
+            background-color: var(--secondary-color);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+        
+        .hot-job-card {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-select {
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        .highlighted-word {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        /* Modal Styles */
+        .modal-content {
+            border: none;
+            border-radius: 0.5rem;
+            padding: 2rem;
+        }
+        
+        .modal-header {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .modal-title {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .btn-close {
+            font-size: 1.5rem;
+        }
+        
+        .share-buttons {
+            margin-top: 2rem;
+        }
+        
+        .share-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        #share-button-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        #share-button-line {
+            background-color: #00B900;
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 2rem 0;
+        }
+        
+        .footer-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hot-job-card {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                margin-bottom: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+    <!-- QRious Library -->
     <script src="https://cdn.jsdelivr.net/npm/qrious@latest/dist/qrious.min.js"></script>
 </head>
 
 <body>
+    <!-- Header/Navbar -->
     <header>
-        <div class="logo">
-            <img src="teleperformance-logo.png" alt="Teleperformance Logo">
-        </div>
-       
-        <nav>
-            <button class="menu-toggle">☰</button>
-
-            <!-- Menu Wrapper for Mobile View -->
-            <div class="menu-wrapper">
-                <!-- Desktop menu -->
-                <ul class="desktop-menu">
-                    <!-- Existing individual items -->
-                    <li><a href="#">About Us</a>
-                        <ul class="dropdown">
-                            <li><a href="https://www.teleperformance.com/en-us/locations/malaysia-site/malaysia/">TP Malaysia</a></li>
-                            <li><a href="https://www.teleperformance.com/en-us/locations/thailand-site/thailand/">TP Thailand</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="careers">Careers</a>
-                        <ul class="dropdown">
-                            <li><a href="#" id="hot-job">Hot Job 🔥</a></li>
-                            <li><a href="oppor.html">Job Opportunities 🌟</a></li>
-                            <li><a href="https://teleperformancemy.github.io/RAF_multilingual/">Refer A Friend</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="stay">Stay Connected</a>
-                        <ul class="dropdown">
-                            <li><a href="https://www.instagram.com/teleperformance_malaysia/"><img src="instagram-icon.png" alt="Instagram Logo" class="logo-icon"> TPMY Instagram</a></li>
-                            <li><a href="https://www.instagram.com/teleperformance_thailand/"><img src="instagram-icon.png" alt="Instagram Logo" class="logo-icon"> TPTH Instagram</a></li>
-                            <li><a href="https://www.facebook.com/teleperformance.malaysia/"><img src="facebook-icon.png" alt="Facebook Logo" class="logo-icon"> TPMY Facebook</a></li>
-                            <li><a href="https://www.facebook.com/p/Teleperformance-Thailand-100076709572409/"><img src="facebook-icon.png" alt="Facebook Logo" class="logo-icon"> TPTH Facebook</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="https://www.teleperformance.com/en-us/contact-us/" class="contact-us">Contact Us</a></li>
-                    <li class="language-dropdown">
-                        <a href="#">Language</a>
-                        <ul class="dropdown">
-                        <li><a href="#" data-lang="en">English</a></li>
-                            <li><a href="#" data-lang="zh">Mandarin</a></li>
-                            <li><a href="#" data-lang="jp">Japanese</a></li>
-                            <li><a href="#" data-lang="TH">Thai</a></li>
-                            <li><a href="#" data-lang="my">Malay</a></li>
-                            <li><a href="#" data-lang="kr">Korean</a></li>
-                       </ul>
-                    </li>
-                </ul>
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="GMT_Logos Teleperformance_RGB_July 2023_purple gradient.png" alt="Teleperformance Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                About Us
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                <li><a class="dropdown-item" href="https://www.teleperformance.com/en-us/locations/malaysia-site/malaysia/">TP Malaysia</a></li>
+                                <li><a class="dropdown-item" href="https://www.teleperformance.com/en-us/locations/thailand-site/thailand/">TP Thailand</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Careers
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="careersDropdown">
+                                <li><a class="dropdown-item" href="#" id="hot-job">Hot Job 🔥</a></li>
+                                <li><a class="dropdown-item" href="oppor.html">Job Opportunities 🌟</a></li>
+                                <li><a class="dropdown-item" href="https://teleperformancemy.github.io/RAF_multilingual/">Refer A Friend</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="connectDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Stay Connected
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="connectDropdown">
+                                <li><a class="dropdown-item" href="https://www.instagram.com/teleperformance_malaysia/"><img src="igpinnk-removebg-preview.png" alt="Instagram Logo" class="logo-icon me-2"> TPMY Instagram</a></li>
+                                <li><a class="dropdown-item" href="https://www.instagram.com/teleperformance_thailand/"><img src="igpinnk-removebg-preview.png" alt="Instagram Logo" class="logo-icon me-2"> TPTH Instagram</a></li>
+                                <li><a class="dropdown-item" href="https://www.facebook.com/teleperformance.malaysia/"><img src="fbpiink-removebg-preview.png" alt="Facebook Logo" class="logo-icon me-2"> TPMY Facebook</a></li>
+                                <li><a class="dropdown-item" href="https://www.facebook.com/p/Teleperformance-Thailand-100076709572409/"><img src="fbpiink-removebg-preview.png" alt="Facebook Logo" class="logo-icon me-2"> TPTH Facebook</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link contact-us" href="https://www.teleperformance.com/en-us/contact-us/">Contact Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Language
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="zh">Mandarin</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="jp">Japanese</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="TH">Thai</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="my">Malay</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="kr">Korean</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="intro">
-            <div class="intro-text">
-                <h1>We are on the hunt for the <span class="highlight">One</span></h1>
-            </div>
-            <div class="intro-video">
-                <video width="100%" controls autoplay controls loop>
-                    <source src="teleperformance-video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </section>
-
-        <section class="job-section">
-            <div class="background-image"></div>
-            <div class="hot-job">
-                <h2>Hot Job Of The Week!</h2>
-                <p>Check out our <strong>"Hot Job of the Week"</strong> and join our award-winning team! This role offers fantastic growth opportunities, competitive benefits, and the chance to work with cutting-edge AI technology. Apply now and be part of our journey to excellence!</p>
-                <button id="apply-btn" href="https://careerseng-teleperformance.icims.com/jobs/49438/customer-success-specialist---mandarin----penang/job?mode=view" class="apply-btn">Apply Now!</button>
-            </div>
-            <div class="find-job">
-                <h2>Find your perfect job!</h2>
-                <div class="dropdowns">
-                    <label class="langlabel" for="language-select">
-                        Preferred Language
-                        <select id="language-select" class="footer-select">
-                            <option value="" disabled selected>Choose your language</option>
-                        </select>
-                    </label>
-                    <hr>
-                    <label class="loclabel" for="location-select">
-                        Choose Your Location
-                        <select id="location-select" class="footer-select">
-                            <option value="" disabled selected>Choose your location</option>
-                        </select>
-                    </label>
-                    <hr>
-                    <label class="jobt" for="job-type-select">
-                        Choose Your Job Type
-                        <select id="job-type-select" class="footer-select">
-                            <option value="" disabled selected>Choose your job type</option>
-                        </select>
-                    </label>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="hero-title">We are on the hunt for the <span class="highlight">One</span></h1>
                 </div>
-             
-                <div class="container">
-                    <button id="generate-btn" class="generate-btn">Generate QR Code & Apply Now!</button>
-                    <h1>Our team will respond within  <span class="highlighted-word">48 hours!</span></h1>          
-                </div>                    
+                <div class="col-lg-6">
+                    <div class="hero-video">
+                        <video width="100%" controls autoplay loop muted>
+                            <source src="Teleperformance_ Where Dreams Come True in the APAC Region _ TP Malaysia (2).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
-    
+        </div>
+    </section>
+
+    <!-- Job Section -->
+    <section class="job-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="hot-job-card">
+                        <h2 class="section-title">Hot Job Of The Week!</h2>
+                        <p>Check out our <strong>"Hot Job of the Week"</strong> and join our award-winning team! This role offers fantastic growth opportunities, competitive benefits, and the chance to work with cutting-edge AI technology. Apply now and be part of our journey to excellence!</p>
+                        <button id="apply-btn" href="https://careerseng-teleperformance.icims.com/jobs/49438/customer-success-specialist---mandarin----penang/job?mode=view" class="btn btn-primary w-100">Apply Now!</button>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="find-job-card">
+                        <h2 class="section-title">Find your perfect job!</h2>
+                        <div class="dropdowns">
+                            <div class="mb-4">
+                                <label for="language-select" class="form-label">Preferred Language</label>
+                                <select id="language-select" class="form-select">
+                                    <option value="" disabled selected>Choose your language</option>
+                                </select>
+                            </div>
+                            <hr class="my-4">
+                            <div class="mb-4">
+                                <label for="location-select" class="form-label">Choose Your Location</label>
+                                <select id="location-select" class="form-select">
+                                    <option value="" disabled selected>Choose your location</option>
+                                </select>
+                            </div>
+                            <hr class="my-4">
+                            <div class="mb-4">
+                                <label for="job-type-select" class="form-label">Choose Your Job Type</label>
+                                <select id="job-type-select" class="form-select">
+                                    <option value="" disabled selected>Choose your job type</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-4">
+                            <button id="generate-btn" class="btn btn-primary me-3">Generate QR Code & Apply Now!</button>
+                            <h5 class="mb-0">Our team will respond within <span class="highlighted-word">48 hours!</span></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p class="footer-left">© 2024 Teleperformance. All rights reserved.</p>
-        <p class="footer-right">#ElevateAsia #MoreTogether</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2024 Teleperformance. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">#ElevateAsia #MoreTogether</p>
+                </div>
+            </div>
+        </div>
     </footer>
-    
-    <div id="qr-modal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <canvas id="qr-code"></canvas>
-            <p><a id="job-url" href="#" target="_blank"></a></p>
-            <div class="share-buttons">
-                <h2> Share Via</h2>
-                <div>
-                    <button id="share-button-whatsapp"></button>
-                    <button id="share-button-line"></button>
+
+    <!-- QR Modal -->
+    <div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="qrModalLabel">Scan to Apply</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <canvas id="qr-code" class="mb-3"></canvas>
+                    <p><a id="job-url" href="#" target="_blank" class="text-break"></a></p>
+                    <div class="share-buttons">
+                        <h5 class="mb-3">Share Via</h5>
+                        <div>
+                            <button id="share-button-whatsapp" class="share-btn"><i class="fab fa-whatsapp"></i></button>
+                            <button id="share-button-line" class="share-btn"><i class="fab fa-line"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language translation functionality
+            const languages = {
+                en: {
+                    about_us: "About Us",
+                    careers: "Careers",
+                    hot_job: "Hot Job 🔥",
+                    opportunities: "Job Opportunities 🌟",
+                    refer_friend: "Refer A Friend",
+                    stay_connected: "Stay Connected",
+                    contact_us: "Contact Us",
+                    language: 'Language',
+                    hot_job_content: "Hot Job Of The Week!",
+                    hot_job_description: "Check out our <strong>\"Hot Job of the Week\"</strong> and join our award-winning team! This role offers fantastic growth opportunities, competitive benefits, and the chance to work with cutting-edge AI technology. Apply now and be part of our journey to excellence!",
+                    apply_now: "Apply Now!",
+                    find_job: "Find your perfect job!",
+                    choose_language: "Choose your language",
+                    choose_location: "Choose your location",
+                    choose_job_type: "Choose your job type",
+                    generate_qr: "Generate QR Code & Apply Now!",
+                    intro_text: "We are on the hunt for the <span class='highlight'>One</span>",
+                    team_response: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
+                    share_via: "Share via",
+                    preferred_language: "Preferred Language"
+                },
+                zh: {
+                    about_us: "关于我们",
+                    careers: "职业机会",
+                    hot_job: "热门职位 🔥",
+                    opportunities: "机会 🌟",
+                    refer_friend: "介绍个朋友",
+                    stay_connected: "保持联系",
+                    contact_us: "联系我们",
+                    language: '语言',
+                    hot_job_content: "本周热门职位!",
+                    hot_job_description: "查看我们的<strong>\"本周热门职位\"</strong>，加入我们屡获殊荣的团队吧！这个职位提供了绝佳的成长机会、具有竞争力的福利待遇，以及与尖端AI技术合作的机会。立即申请，成为我们追求卓越之旅的一部分！",
+                    apply_now: "立即申请！",
+                    find_job: "找到你的理想工作！",
+                    choose_language: "首选语言",
+                    choose_location: "选择您的位置",
+                    choose_job_type: "选择您的工作类型",
+                    generate_qr: "生成二维码并立即申请！",
+                    intro_text: "我们正在寻找那个<span class='highlight'>合适的人</span>",
+                    team_response: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
+                    share_via: "分享",
+                    preferred_language: "首选语言"
+                },
+                jp: {
+                    about_us: "会社概要",
+                    careers: "採用情報",
+                    hot_job: "ホットジョブ 🔥",
+                    opportunities: "採用情報 🌟",
+                    refer_friend: "友達紹介",
+                    stay_connected: "つながりを続ける",
+                    contact_us: "お問い合わせ",
+                    language: '言語',
+                    hot_job_content: "今週の注目のお仕事!",
+                    hot_job_description: "当社の<strong>「今週の注目のお仕事」</strong>をチェックして、受賞歴のあるチームに参加しませんか！この職務は、素晴らしい成長の機会、競争力のある福利厚生、そして最先端のAI テクノロジーを活用する機会を提供します。今すぐ応募して、私たちの卓越性への旅の一員になりませんか！",
+                    apply_now: "今すぐ応募!",
+                    find_job: "理想の仕事を見つける!",
+                    choose_language: "勤務地を選択",
+                    choose_location: "あなたの場所を選択してください",
+                    choose_job_type: "職種を選ぶ",
+                    generate_qr: "QRコードを作成し、今すぐご応募ください！",
+                    intro_text: "私たちは<span class='highlight'>誰か</span>を探しています",
+                    team_response: "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
+                    share_via: "共有",
+                    preferred_language: "首選言語"
+                },
+                kr: {
+                    about_us: "회사소개 / About TP",
+                    careers: "인재채용 / 커리어",
+                    stay_connected: "문의/연락처",
+                    contact_us: "문의하기",
+                    language: "언어",
+                    hot_job: "주간 인기 채용공고",
+                    hot_job_description: "주간 인기 채용공고를 확인하고 최고의 팀에 합류하세요!",
+                    apply_now: "지원하기",
+                    find_job: "여러분의 최고의 직장을 찾으세요!",
+                    choose_language: "언어 선택",
+                    choose_location: "국가/지역 선택",
+                    choose_job_type: "직무 유형 선택",
+                    generate_qr: "QR코드 생성 및 지원하기",
+                    intro_text: "함께할 인재를 찾습니다.",
+                    team_response: "48시간 내 관련 부서에서 응답할 예정입니다.",
+                    share_via: "공유하기",
+                    preferred_language: "선호하는 언어"
+                },
+                my: {
+                    about_us: "Tentang Kami",
+                    careers: "Peluang Kerjaya",
+                    stay_connected: "Terus Berhubung",
+                    contact_us: "Hubungi Kami",
+                    language: "Bahasa",
+                    hot_job: "Kerja hangat minggu ini",
+                    hot_job_description: "Semak Kerja Hangat Minggu Ini dan sertai pasukan kami!",
+                    apply_now: "Mohon Sekarang!",
+                    find_job: "Cari pekerjaan impian anda!",
+                    choose_language: "Pilih bahasa anda",
+                    choose_location: "Pilih lokasi anda",
+                    choose_job_type: "Pilih jenis pekerjaan anda",
+                    generate_qr: "Jana kod QR dan mohon sekarang!",
+                    intro_text: "Kami sedang mencari orang yang sesuai.",
+                    team_response: "Pasukan kami akan bertindak balas dalam masa 48 jam!",
+                    share_via: "Kongsi melalui",
+                    preferred_language: "Bahasa Pilihan"
+                },
+                th: {
+                    about_us: "เกี่ยวกับเรา",
+                    careers: "อาชีพ",
+                    stay_connected: "เชื่อมต่อกับเรา",
+                    contact_us: "ติดต่อเรา",
+                    language: "ภาษา",
+                    hot_job: "ตำแหน่งงานด่วนประจำสัปดาห์",
+                    hot_job_description: "ตรวจสอบตำแหน่งงานด่วนประจำสัปดาห์และเข้าร่วมทีมของเรา!",
+                    apply_now: "สมัครตอนนี้!",
+                    find_job: "หางานที่ใช่สำหรับคุณ!",
+                    choose_language: "เลือกภาษาของคุณ",
+                    choose_location: "เลือกตำแหน่งที่ตั้ง",
+                    choose_job_type: "เลือกประเภทงาน",
+                    generate_qr: "สร้าง QR และสมัครได้เลย",
+                    intro_text: "เรากำลังตามหา คนที่ใช่",
+                    team_response: "ทีมงานของเราจะตอบกลับภายใน 48 ชั่วโมง!",
+                    share_via: "แชร์ผ่าน",
+                    preferred_language: "ภาษาที่ต้องการ"
+                }
+            };
+
+            // Translation function
+            function updateContent(language) {
+                const langContent = languages[language] || languages['en'];
+                
+                for (const [selector, key] of Object.entries({
+                    '.intro-text h1': 'intro_text',
+                    '.hot-job h2': 'hot_job_content',
+                    '.hot-job p': 'hot_job_description',
+                    '.find-job h2': 'find_job',
+                    '#generate-btn': 'generate_qr',
+                    '.container h1': 'team_response',
+                    '.langlabel': 'preferred_language',
+                    '.loclabel': 'choose_location',
+                    '.jobt': 'choose_job_type',
+                    '.navbar-nav li:nth-child(1) > a': 'about_us',
+                    '.navbar-nav li:nth-child(2) > a': 'careers',
+                    '.navbar-nav li:nth-child(3) > a': 'stay_connected',
+                    '.navbar-nav li:nth-child(4) > a': 'contact_us',
+                    '.navbar-nav li:nth-child(5) > a': 'language'
+                })) {
+                    const element = document.querySelector(selector);
+                    if (element && langContent[key]) {
+                        element.innerHTML = langContent[key];
+                    }
+                }
+            }
+
+            // Language dropdown functionality
+            document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const selectedLanguage = this.getAttribute('data-lang');
+                    updateContent(selectedLanguage);
+                    
+                    // Update URL with language parameter
+                    const urlParams = new URLSearchParams(window.location.search);
+                    urlParams.set('lang', selectedLanguage);
+                    window.history.replaceState(null, '', `${window.location.pathname}?${urlParams.toString()}`);
+                });
+            });
+
+            // Get current language from URL or default to English
+            function getLanguageFromUrl() {
+                const params = new URLSearchParams(window.location.search);
+                return params.get('lang') || 'en';
+            }
+
+            // Initialize with current language
+            const currentLanguage = getLanguageFromUrl();
+            updateContent(currentLanguage);
+
+            // Job dropdown functionality
+            let jsonData = [];
+            const languageSelect = document.getElementById('language-select');
+            const locationSelect = document.getElementById('location-select');
+            const jobTypeSelect = document.getElementById('job-type-select');
+
+            // Sample data - replace with your actual data.json fetch
+            jsonData = [
+                {
+                    "Language": "English",
+                    "Location": "Malaysia",
+                    "Positions": "Customer Service Representative",
+                    "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49438/customer-success-specialist---mandarin----penang/job"
+                },
+                {
+                    "Language": "Mandarin",
+                    "Location": "Malaysia",
+                    "Positions": "Customer Service Representative",
+                    "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49438/customer-success-specialist---mandarin----penang/job"
+                },
+                {
+                    "Language": "Japanese",
+                    "Location": "Malaysia",
+                    "Positions": "Customer Service Representative",
+                    "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49438/customer-success-specialist---mandarin----penang/job"
+                }
+            ];
+
+            // Populate dropdowns from JSON data
+            function populateDropdowns() {
+                // Get unique values for each dropdown
+                const languages = [...new Set(jsonData.map(item => item.Language))];
+                const locations = [...new Set(jsonData.map(item => item.Location))];
+                
+                // Clear existing options
+                languageSelect.innerHTML = '<option value="" disabled selected>Choose your language</option>';
+                locationSelect.innerHTML = '<option value="" disabled selected>Choose your location</option>';
+                jobTypeSelect.innerHTML = '<option value="" disabled selected>Choose your job type</option>';
+                
+                // Populate language dropdown
+                languages.forEach(lang => {
+                    const option = document.createElement('option');
+                    option.value = lang;
+                    option.textContent = lang;
+                    languageSelect.appendChild(option);
+                });
+                
+                // Populate location dropdown
+                locations.forEach(loc => {
+                    const option = document.createElement('option');
+                    option.value = loc;
+                    option.textContent = loc;
+                    locationSelect.appendChild(option);
+                });
+            }
+
+            // Update job types when language or location changes
+            function updateJobTypes() {
+                const selectedLanguage = languageSelect.value;
+                const selectedLocation = locationSelect.value;
+                
+                // Clear existing options
+                jobTypeSelect.innerHTML = '<option value="" disabled selected>Choose your job type</option>';
+                
+                if (selectedLanguage && selectedLocation) {
+                    // Filter jobs based on selections
+                    const jobs = jsonData.filter(item => 
+                        item.Language === selectedLanguage && 
+                        item.Location === selectedLocation
+                    );
+                    
+                    // Get unique job types
+                    const jobTypes = [...new Set(jobs.map(item => item.Positions))];
+                    
+                    // Populate job types dropdown
+                    jobTypes.forEach(job => {
+                        const option = document.createElement('option');
+                        option.value = job;
+                        option.textContent = job;
+                        jobTypeSelect.appendChild(option);
+                    });
+                }
+            }
+
+            // Initialize dropdowns
+            populateDropdowns();
+            
+            // Add event listeners
+            languageSelect.addEventListener('change', updateJobTypes);
+            locationSelect.addEventListener('change', updateJobTypes);
+
+            // Generate QR code functionality
+            document.getElementById('generate-btn').addEventListener('click', function() {
+                const language = languageSelect.value;
+                const location = locationSelect.value;
+                const jobType = jobTypeSelect.value;
+                
+                if (!language || !location || !jobType) {
+                    alert('Please select all options');
+                    return;
+                }
+                
+                // Find the matching job
+                const job = jsonData.find(item => 
+                    item.Language === language && 
+                    item.Location === location && 
+                    item.Positions === jobType
+                );
+                
+                if (job) {
+                    // Generate QR code
+                    const qr = new QRious({
+                        element: document.getElementById('qr-code'),
+                        value: job['Evergreen link'],
+                        size: 200
+                    });
+                    
+                    // Set job URL
+                    const jobUrlElement = document.getElementById('job-url');
+                    jobUrlElement.href = job['Evergreen link'];
+                    jobUrlElement.textContent = job['Evergreen link'];
+                    
+                    // Show modal
+                    const qrModal = new bootstrap.Modal(document.getElementById('qrModal'));
+                    qrModal.show();
+                } else {
+                    alert('No matching job found');
+                }
+            });
+
+            // Share buttons
+            document.getElementById('share-button-whatsapp').addEventListener('click', function() {
+                const url = encodeURIComponent(document.getElementById('job-url').href);
+                const text = encodeURIComponent("Check out this job opportunity at Teleperformance!");
+                window.open(`https://wa.me/?text=${text}%20${url}`);
+            });
+
+            document.getElementById('share-button-line').addEventListener('click', function() {
+                const url = encodeURIComponent(document.getElementById('job-url').href);
+                const text = encodeURIComponent("Check out this job opportunity at Teleperformance!");
+                window.open(`https://line.me/R/msg/text/?${text}%0A%0A${url}`);
+            });
+
+            // Apply button
+            document.getElementById('apply-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open(this.getAttribute('href'), '_blank');
+            });
+
+            // Function to generate final URL with UTM parameters
+            function generateFinalURL(baseURL, source, medium) {
+                let finalURL = new URL(baseURL);
+                let iisValue, iisnValue;
+
+                switch (medium) {
+                    case 'social':
+                    case 'Social':
+                        iisValue = "Social Media";
+                        iisnValue = `${encodeURIComponent(source).replace(/%2B/g, '+')}`;
+                        break;
+                    case 'Career':
+                    case 'career':
+                        iisValue = "Career Fair";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'digital':
+                        iisValue = "Digital Ad";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'mobile':
+                    case 'Mobile':
+                        iisValue = "Mobile Stand";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'poster':
+                        iisValue = "Poster";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'flyers':
+                        iisValue = "Flyers";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'physical':
+                        iisValue = "Physical QR";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'FoTG':
+                        iisValue = "FoTG";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'banner1':
+                        iisValue = "Banner 1";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'banner2':
+                        iisValue = "Banner 2";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'Email':
+                        iisValue = "Email Blast";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'public':
+                        iisValue = "Public Stands";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'grab':
+                        iisValue = "Grab";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    case 'Broadcast':
+                        iisValue = "Broadcast Comms";
+                        iisnValue = encodeURIComponent(source).replace(/%2B/g, '+');
+                        break;
+                    default:
+                        console.error("Unknown utm_medium");
+                        return baseURL;
+                }
+
+                finalURL.searchParams.set('mode', 'job');
+                finalURL.searchParams.set('iis', encodeURIComponent(iisValue).replace(/%20/g, '+'));
+                finalURL.searchParams.set('iisn', encodeURIComponent(iisnValue).replace(/%2B/g, '+'));
+
+                return decodeURIComponent(finalURL.toString());
+            }
+        });
+    </script>
 </body>
 </html>
