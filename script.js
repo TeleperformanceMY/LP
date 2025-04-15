@@ -23,14 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
             generate_qr: "Generate QR Code & Apply Now!",
             intro_text: "We are on the hunt for the <span class='highlight'>One</span>",
             team_response: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
-            intro_text1: "Find your perfect <span class='highlight'><br>Job!</br></span>",
-            intro_text2: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
-            share_via: "Share via",
+            share_via: "Share Via",
             preferred_language: "Preferred Language",
-            stay_connected: "Stay Connected",
+            scan_to_apply: "Scan to Apply",
             select_all_options: "Please select all options",
-            no_job_found: "No matching job found",
-            scan_to_apply: "Scan to Apply"
+            no_job_found: "No matching job found"
         },
         zh: {
             about_us: "关于我们",
@@ -45,120 +42,117 @@ document.addEventListener('DOMContentLoaded', function() {
             hot_job_description: "查看我们的<strong>\"本周热门职位\"</strong>，加入我们屡获殊荣的团队吧！这个职位提供了绝佳的成长机会、具有竞争力的福利待遇，以及与尖端AI技术合作的机会。立即申请，成为我们追求卓越之旅的一部分！",
             apply_now: "立即申请！",
             find_job: "找到你的理想工作！",
-            choose_language: "首选语言",
-            choose_location: "选择您的位置",
-            choose_job_type: "选择您的工作类型",
+            choose_language: "选择语言",
+            choose_location: "选择地点",
+            choose_job_type: "选择工作类型",
             generate_qr: "生成二维码并立即申请！",
-            intro_text: "我们正在寻找那个<span class='highlight'>合适的人</span>",
-            team_response: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
-            intro_text1: "找到你的完美 <span class='highlight'><br>工作</br></span>",
-            intro_text2: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
+            intro_text: "我们正在寻找<span class='highlight'>合适的人选</span>",
+            team_response: "我们的团队将在<span class='highlighted-word'>48小时</span>内回复！",
             share_via: "分享",
             preferred_language: "首选语言",
-            stay_connected: "保持联系",
+            scan_to_apply: "扫码申请",
             select_all_options: "请选择所有选项",
-            no_job_found: "未找到匹配的工作",
-            scan_to_apply: "扫码申请"
+            no_job_found: "未找到匹配的工作"
         },
         jp: {
             about_us: "会社概要",
             careers: "採用情報",
             hot_job: "ホットジョブ 🔥",
-            opportunities: "採用情報 🌟",
-            refer_friend: "友達紹介",
-            stay_connected: "つながりを続ける",
+            opportunities: "求人情報 🌟",
+            refer_friend: "友達を紹介",
+            stay_connected: "つながりを保つ",
             contact_us: "お問い合わせ",
             language: "言語",
-            hot_job_content: "今週の注目のお仕事!",
-            hot_job_description: "当社の<strong>「今週の注目のお仕事」</strong>をチェックして、受賞歴のあるチームに参加しませんか！この職務は、素晴らしい成長の機会、競争力のある福利厚生、そして最先端のAI テクノロジーを活用する機会を提供します。今すぐ応募して、私たちの卓越性への旅の一員になりませんか！",
+            hot_job_content: "今週の注目の求人!",
+            hot_job_description: "当社の<strong>「今週の注目の求人」</strong>をチェックして、受賞歴のあるチームに参加しましょう！この役職は、素晴らしい成長機会、競争力のある福利厚生、最先端のAI技術に携わる機会を提供します。今すぐ応募して、私たちの卓越性への旅に参加しましょう！",
             apply_now: "今すぐ応募!",
-            find_job: "理想の仕事を見つける!",
-            choose_language: "勤務地を選択",
-            choose_location: "あなたの場所を選択してください",
-            choose_job_type: "職種を選ぶ",
-            generate_qr: "QRコードを作成し、今すぐご応募ください！",
-            intro_text: "私たちは<span class='highlight'>誰か</span>を探しています",
-            team_response: "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
-            intro_text1: "理想の<span class='highlight'><br>お仕事</br></span>を見つけましょう！",
-            intro_text2: "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
+            find_job: "理想の仕事を見つけよう!",
+            choose_language: "言語を選択",
+            choose_location: "場所を選択",
+            choose_job_type: "職種を選択",
+            generate_qr: "QRコードを生成して今すぐ応募!",
+            intro_text: "私たちは<span class='highlight'>適任者</span>を探しています",
+            team_response: "チームは<span class='highlighted-word'>48時間</span>以内に返信します!",
             share_via: "共有",
-            preferred_language: "首選言語",
-            stay_connected: "つながりを続ける",
+            preferred_language: "希望言語",
+            scan_to_apply: "スキャンして応募",
             select_all_options: "すべてのオプションを選択してください",
-            no_job_found: "一致する仕事が見つかりません",
-            scan_to_apply: "スキャンして応募"
+            no_job_found: "一致する仕事が見つかりません"
         },
         kr: {
-            about_us: "회사소개 / About TP",
-            careers: "인재채용 / 커리어",
-            stay_connected: "문의/연락처",
+            about_us: "회사소개",
+            careers: "채용정보",
+            hot_job: "핫잡 🔥",
+            opportunities: "채용기회 🌟",
+            refer_friend: "친구추천",
+            stay_connected: "연락유지",
             contact_us: "문의하기",
             language: "언어",
-            hot_job: "주간 인기 채용공고",
-            hot_job_description: "주간 인기 채용공고를 확인하고 최고의 팀에 합류하세요!",
-            apply_now: "지원하기",
-            find_job: "여러분의 최고의 직장을 찾으세요!",
+            hot_job_content: "이번 주 핫잡!",
+            hot_job_description: "우리의 <strong>\"이번 주 핫잡\"</strong>을 확인하고 수상 경력이 있는 팀에 합류하세요! 이 역할은 훌륭한 성장 기회, 경쟁력 있는 혜택 및 최첨단 AI 기술을 사용할 수 있는 기회를 제공합니다. 지금 지원하여 우리의 탁월함을 향한 여정에 동참하세요!",
+            apply_now: "지금 지원하세요!",
+            find_job: "당신에게 딱 맞는 일자리를 찾아보세요!",
             choose_language: "언어 선택",
-            choose_location: "국가/지역 선택",
+            choose_location: "위치 선택",
             choose_job_type: "직무 유형 선택",
-            generate_qr: "QR코드 생성 및 지원하기",
-            intro_text: "함께할 인재를 찾습니다.",
-            team_response: "48시간 내 관련 부서에서 응답할 예정입니다.",
-            intro_text1: "여러분의 최고의 <br>직장을</br> 찾으세요!",
-            intro_text2: "우리 팀은 <span class='highlighted-word'>48시간</span> 내에 답변드립니다.",
+            generate_qr: "QR 코드 생성 및 지금 지원!",
+            intro_text: "우리는 <span class='highlight'>적임자</span>를 찾고 있습니다",
+            team_response: "우리 팀은 <span class='highlighted-word'>48시간</span> 이내에 답변드립니다!",
             share_via: "공유하기",
-            preferred_language: "선호하는 언어",
+            preferred_language: "선호 언어",
+            scan_to_apply: "스캔하여 지원",
             select_all_options: "모든 옵션을 선택하세요",
-            no_job_found: "일치하는 직업을 찾을 수 없습니다",
-            scan_to_apply: "스캔하여 지원"
+            no_job_found: "일치하는 직업을 찾을 수 없음"
         },
         my: {
             about_us: "Tentang Kami",
             careers: "Peluang Kerjaya",
+            hot_job: "Kerja Hangat 🔥",
+            opportunities: "Peluang Pekerjaan 🌟",
+            refer_friend: "Rakan Rujuk",
             stay_connected: "Terus Berhubung",
             contact_us: "Hubungi Kami",
             language: "Bahasa",
-            hot_job: "Kerja hangat minggu ini",
-            hot_job_description: "Semak Kerja Hangat Minggu Ini dan sertai pasukan kami!",
+            hot_job_content: "Kerja Hangat Minggu Ini!",
+            hot_job_description: "Lihat <strong>\"Kerja Hangat Minggu Ini\"</strong> kami dan sertai pasukan pemenang anugerah kami! Peranan ini menawarkan peluang pertumbuhan yang hebat, faedah yang kompetitif, dan peluang untuk bekerja dengan teknologi AI canggih. Mohon sekarang dan jadilah sebahagian daripada perjalanan kami ke kecemerlangan!",
             apply_now: "Mohon Sekarang!",
-            find_job: "Cari pekerjaan impian anda!",
+            find_job: "Cari pekerjaan sempurna anda!",
             choose_language: "Pilih bahasa anda",
             choose_location: "Pilih lokasi anda",
             choose_job_type: "Pilih jenis pekerjaan anda",
-            generate_qr: "Jana kod QR dan mohon sekarang!",
-            intro_text: "Kami sedang mencari orang yang sesuai.",
-            team_response: "Pasukan kami akan bertindak balas dalam masa 48 jam!",
-            intro_text1: "Cari pekerjaan<br>terbaik</br>anda!",
-            intro_text2: "Pasukan kami akan bertindak balas dalam <span class='highlighted-word'>48 jam</span>!",
-            share_via: "Kongsi melalui",
+            generate_qr: "Hasilkan Kod QR & Mohon Sekarang!",
+            intro_text: "Kami mencari <span class='highlight'>Yang Satu</span>",
+            team_response: "Pasukan kami akan membalas dalam masa <span class='highlighted-word'>48 jam!</span>",
+            share_via: "Kongsi Melalui",
             preferred_language: "Bahasa Pilihan",
+            scan_to_apply: "Imbas untuk Memohon",
             select_all_options: "Sila pilih semua pilihan",
-            no_job_found: "Tiada pekerjaan yang sepadan ditemui",
-            scan_to_apply: "Imbas untuk Memohon"
+            no_job_found: "Tiada pekerjaan yang sepadan ditemui"
         },
         th: {
             about_us: "เกี่ยวกับเรา",
             careers: "อาชีพ",
-            stay_connected: "เชื่อมต่อกับเรา",
+            hot_job: "งานร้อนแรง 🔥",
+            opportunities: "โอกาสในการทำงาน 🌟",
+            refer_friend: "แนะนำเพื่อน",
+            stay_connected: "ติดต่อกันไว้",
             contact_us: "ติดต่อเรา",
             language: "ภาษา",
-            hot_job: "ตำแหน่งงานด่วนประจำสัปดาห์",
-            hot_job_description: "ตรวจสอบตำแหน่งงานด่วนประจำสัปดาห์และเข้าร่วมทีมของเรา!",
-            apply_now: "สมัครตอนนี้!",
-            find_job: "หางานที่ใช่สำหรับคุณ!",
+            hot_job_content: "งานร้อนแรงประจำสัปดาห์!",
+            hot_job_description: "ตรวจสอบ<strong>\"งานร้อนแรงประจำสัปดาห์\"</strong>ของเราและเข้าร่วมทีมที่ได้รับรางวัลของเรา! ตำแหน่งนี้เปิดโอกาสในการเติบโตอย่างยอดเยี่ยม สวัสดิการที่แข่งขันได้ และโอกาสในการทำงานกับเทคโนโลยี AI ล้ำสมัย สมัครตอนนี้และเป็นส่วนหนึ่งของการเดินทางสู่ความเป็นเลิศของเรา!",
+            apply_now: "สมัครเลย!",
+            find_job: "หางานในฝันของคุณ!",
             choose_language: "เลือกภาษาของคุณ",
-            choose_location: "เลือกตำแหน่งที่ตั้ง",
-            choose_job_type: "เลือกประเภทงาน",
-            generate_qr: "สร้าง QR และสมัครได้เลย",
-            intro_text: "เรากำลังตามหา คนที่ใช่",
-            team_response: "ทีมงานของเราจะตอบกลับภายใน 48 ชั่วโมง!",
-            intro_text1: "หางานที่<br>ดีที่สุด</br>สำหรับคุณ!",
-            intro_text2: "ทีมงานของเราจะตอบกลับใน <span class='highlighted-word'>48 ชั่วโมง</span>!",
+            choose_location: "เลือกสถานที่ของคุณ",
+            choose_job_type: "เลือกประเภทงานของคุณ",
+            generate_qr: "สร้าง QR Code และสมัครเลย!",
+            intro_text: "เรากำลังตามหา<span class='highlight'>คนที่ใช่</span>",
+            team_response: "ทีมงานของเราจะตอบกลับภายใน<span class='highlighted-word'>48 ชั่วโมง!</span>",
             share_via: "แชร์ผ่าน",
             preferred_language: "ภาษาที่ต้องการ",
+            scan_to_apply: "สแกนเพื่อสมัคร",
             select_all_options: "กรุณาเลือกตัวเลือกทั้งหมด",
-            no_job_found: "ไม่พบงานที่ตรงกับเงื่อนไข",
-            scan_to_apply: "สแกนเพื่อสมัคร"
+            no_job_found: "ไม่พบงานที่ตรงกับเงื่อนไข"
         }
     };
 
@@ -191,41 +185,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-        
-        // Update dropdown options
-        const dropdownOptions = {
-            'language-select': 'choose_language',
-            'location-select': 'choose_location',
-            'job-type-select': 'choose_job_type'
-        };
-        
-        for (const [id, key] of Object.entries(dropdownOptions)) {
-            const select = document.getElementById(id);
-            if (select && select.options.length > 0 && select.options[0].textContent.includes('Choose')) {
-                select.options[0].textContent = langContent[key] || 'Choose';
-            }
-        }
     }
 
     // Load job data from JSON file
     function loadJobData() {
         fetch('data.json')
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
+                if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
             })
             .then(data => {
                 jsonData = data;
-                populateDropdowns();
+                populateInitialDropdowns();
                 setHotJob(getLanguageFromUrl());
             })
             .catch(error => {
                 console.error('Error loading job data:', error);
                 alert(languages[getLanguageFromUrl()]?.no_job_found || 'Failed to load job data. Using default data instead.');
                 // Fallback to default data
-/*                jsonData = [
+                jsonData = [
                     {
                         "Positions": "Customer Success Specialist",
                         "Language": "Japanese",
@@ -268,25 +246,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         "Evergreen title": "Sales Consultant - Malay - KL",
                         "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49426/sales-consultant---malay---kl/job?mode=job&iis=LandingPage&iisn="
                     }
-                ]; */
-                populateDropdowns();
+                ];
+                populateInitialDropdowns();
                 setHotJob(getLanguageFromUrl());
             });
     }
 
-    // Populate dropdowns with job data
-    function populateDropdowns() {
+    // Initially populate dropdowns with all options
+    function populateInitialDropdowns() {
         // Clear existing options
         languageSelect.innerHTML = '<option value="" disabled selected>' + (languages[getLanguageFromUrl()]?.choose_language || 'Choose your language') + '</option>';
         locationSelect.innerHTML = '<option value="" disabled selected>' + (languages[getLanguageFromUrl()]?.choose_location || 'Choose your location') + '</option>';
         jobTypeSelect.innerHTML = '<option value="" disabled selected>' + (languages[getLanguageFromUrl()]?.choose_job_type || 'Choose your job type') + '</option>';
 
-        // Get unique languages, locations
-        const uniqueLangs = [...new Set(jsonData.map(item => item.Language))];
-        const uniqueLocs = [...new Set(jsonData.map(item => item.Location))];
+        // Get all unique languages and locations
+        const allLanguages = [...new Set(jsonData.map(item => item.Language))];
+        const allLocations = [...new Set(jsonData.map(item => item.Location))];
 
         // Populate language dropdown
-        uniqueLangs.forEach(lang => {
+        allLanguages.forEach(lang => {
             const option = document.createElement('option');
             option.value = lang;
             option.textContent = lang;
@@ -294,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Populate location dropdown
-        uniqueLocs.forEach(loc => {
+        allLocations.forEach(loc => {
             const option = document.createElement('option');
             option.value = loc;
             option.textContent = loc;
@@ -302,7 +280,74 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Update job types when language or location changes
+    // Update locations based on selected language
+    function updateLocations() {
+        const selectedLanguage = languageSelect.value;
+        const currentLocation = locationSelect.value;
+        
+        // Filter locations based on selected language
+        const filteredLocations = selectedLanguage 
+            ? [...new Set(jsonData
+                .filter(item => item.Language === selectedLanguage)
+                .map(item => item.Location))]
+            : [...new Set(jsonData.map(item => item.Location))];
+        
+        // Update location dropdown
+        updateDropdown(locationSelect, filteredLocations, currentLocation);
+        
+        // Update job types based on new selections
+        updateJobTypes();
+    }
+
+    // Update languages based on selected location
+    function updateLanguages() {
+        const selectedLocation = locationSelect.value;
+        const currentLanguage = languageSelect.value;
+        
+        // Filter languages based on selected location
+        const filteredLanguages = selectedLocation 
+            ? [...new Set(jsonData
+                .filter(item => item.Location === selectedLocation)
+                .map(item => item.Language))]
+            : [...new Set(jsonData.map(item => item.Language))];
+        
+        // Update language dropdown
+        updateDropdown(languageSelect, filteredLanguages, currentLanguage);
+        
+        // Update job types based on new selections
+        updateJobTypes();
+    }
+
+    // Helper function to update a dropdown while preserving current selection if possible
+    function updateDropdown(dropdown, options, currentValue) {
+        const currentSelected = dropdown.value;
+        dropdown.innerHTML = '';
+        
+        // Add default option
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        defaultOption.textContent = dropdown.id === 'language-select' 
+            ? (languages[getLanguageFromUrl()]?.choose_language || 'Choose your language')
+            : (languages[getLanguageFromUrl()]?.choose_location || 'Choose your location');
+        dropdown.appendChild(defaultOption);
+        
+        // Add all options
+        options.forEach(option => {
+            const opt = document.createElement('option');
+            opt.value = option;
+            opt.textContent = option;
+            dropdown.appendChild(opt);
+        });
+        
+        // Restore previous selection if it still exists
+        if (options.includes(currentValue)) {
+            dropdown.value = currentValue;
+        }
+    }
+
+    // Update job types based on current selections
     function updateJobTypes() {
         const selectedLanguage = languageSelect.value;
         const selectedLocation = locationSelect.value;
@@ -330,25 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Generate QR code and show modal
-    function openQrModal(url) {
-        const qr = new QRious({
-            element: document.getElementById('qr-code'),
-            value: url,
-            size: 200,
-            background: 'white',
-            foreground: 'black'
-        });
-        
-        const jobUrlElement = document.getElementById('job-url');
-        jobUrlElement.href = url;
-        jobUrlElement.textContent = url;
-        
-        const qrModal = new bootstrap.Modal(document.getElementById('qrModal'));
-        qrModal.show();
-    }
-
-    // Generate final URL with UTM parameters (your original working version)
+    // Generate final URL with UTM parameters
     function generateFinalURL(baseURL, source, medium) {
         let finalURL = new URL(baseURL);
         let iisValue, iisnValue;
@@ -418,15 +445,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 return baseURL;
         }
 
-        // Replace "utm_source=" and "utm_medium=" in source and medium
-        source = source.replace('utm_source=', '');
-        medium = medium.replace('utm_medium=', '');
-
         finalURL.searchParams.set('mode', 'job');
         finalURL.searchParams.set('iis', encodeURIComponent(iisValue).replace(/%20/g, '+'));
         finalURL.searchParams.set('iisn', encodeURIComponent(iisnValue).replace(/%2B/g, '+'));
 
         return decodeURIComponent(finalURL.toString());
+    }
+
+    // Generate QR code and show modal
+    function openQrModal(url) {
+        const qr = new QRious({
+            element: document.getElementById('qr-code'),
+            value: url,
+            size: 200,
+            background: 'white',
+            foreground: 'black'
+        });
+        
+        const jobUrlElement = document.getElementById('job-url');
+        jobUrlElement.href = url;
+        jobUrlElement.textContent = url;
+        
+        const qrModal = new bootstrap.Modal(document.getElementById('qrModal'));
+        qrModal.show();
     }
 
     // Set hot job based on language
@@ -456,9 +497,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize event listeners
     function initEventListeners() {
-        // Language and location dropdown changes
-        if (languageSelect) languageSelect.addEventListener('change', updateJobTypes);
-        if (locationSelect) locationSelect.addEventListener('change', updateJobTypes);
+        // Language dropdown change - update locations
+        languageSelect.addEventListener('change', function() {
+            updateLocations();
+            updateContent(this.value);
+            urlParams.set('lang', this.value);
+            window.history.replaceState(null, '', `?${urlParams.toString()}`);
+        });
+
+        // Location dropdown change - update languages
+        locationSelect.addEventListener('change', updateLanguages);
 
         // Generate QR button click
         if (generateBtn) {
@@ -490,14 +538,13 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Language selector
+        // Language selector dropdown items
         document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
             item.addEventListener('click', function(e) {
                 e.preventDefault();
                 const selectedLanguage = this.getAttribute('data-lang');
                 updateContent(selectedLanguage);
                 
-                const urlParams = new URLSearchParams(window.location.search);
                 urlParams.set('lang', selectedLanguage);
                 window.history.replaceState(null, '', `${window.location.pathname}?${urlParams.toString()}`);
                 
@@ -517,21 +564,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const text = encodeURIComponent("Check out this job opportunity at Teleperformance!");
             window.open(`https://line.me/R/msg/text/?${text}%0A%0A${url}`, '_blank');
         });
-        document.getElementById("share-button-facebook").addEventListener("click", function() {
-            const facebookMessage = "🌟 Exciting news! Join our amazing team at Teleperformance! 🌟 We're expanding our family and want you to be a part of it. Click the link below to start your new journey :";
-            const facebookMessage2 = "\n\nLet's grow together! 🚀 #JoinTheTeam";
-            const facebookCaption = encodeURIComponent(facebookMessage + "\n\n" + document.getElementById('job-url').href + "\n\n" + facebookMessage2);
-            const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(document.getElementById('job-url').href)}&quote=${facebookCaption}`;
-            window.open(facebookLink, "_blank", "width=600,height=400");
-        });
-        
-        document.getElementById("share-button-IG").addEventListener("click", function() {
-            const message = "🌟 Exciting news! Join our amazing team at Teleperformance! 🌟 We're expanding our family and want you to be a part of it. Click the link below to start your new journey :";
-            const message2 = "\n\nLet's grow together! 🚀 #JoinTheTeam";
-            const instagramLink = `https://www.instagram.com/?url=${encodeURIComponent(document.getElementById('job-url').href + "\n\n" + message + "\n\n" + message2)}`;
-            window.open(instagramLink, "_blank");
-        });
-     
     }
 
     // Initialize everything
