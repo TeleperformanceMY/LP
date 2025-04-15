@@ -517,6 +517,21 @@ document.addEventListener('DOMContentLoaded', function() {
             const text = encodeURIComponent("Check out this job opportunity at Teleperformance!");
             window.open(`https://line.me/R/msg/text/?${text}%0A%0A${url}`, '_blank');
         });
+        document.getElementById("share-button-facebook").addEventListener("click", function() {
+            const facebookMessage = "🌟 Exciting news! Join our amazing team at Teleperformance! 🌟 We're expanding our family and want you to be a part of it. Click the link below to start your new journey :";
+            const facebookMessage2 = "\n\nLet's grow together! 🚀 #JoinTheTeam";
+            const facebookCaption = encodeURIComponent(facebookMessage + "\n\n" + document.getElementById('job-url').href + "\n\n" + facebookMessage2);
+            const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(document.getElementById('job-url').href)}&quote=${facebookCaption}`;
+            window.open(facebookLink, "_blank", "width=600,height=400");
+        });
+        
+        document.getElementById("share-button-IG").addEventListener("click", function() {
+            const message = "🌟 Exciting news! Join our amazing team at Teleperformance! 🌟 We're expanding our family and want you to be a part of it. Click the link below to start your new journey :";
+            const message2 = "\n\nLet's grow together! 🚀 #JoinTheTeam";
+            const instagramLink = `https://www.instagram.com/?url=${encodeURIComponent(document.getElementById('job-url').href + "\n\n" + message + "\n\n" + message2)}`;
+            window.open(instagramLink, "_blank");
+        });
+     
     }
 
     // Initialize everything
