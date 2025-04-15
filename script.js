@@ -23,16 +23,21 @@ document.addEventListener('DOMContentLoaded', function() {
             generate_qr: "Generate QR Code & Apply Now!",
             intro_text: "We are on the hunt for the <span class='highlight'>One</span>",
             team_response: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
-            share_via: "Share Via",
+            intro_text1: "Find your perfect <span class='highlight'><br>Job!</br></span>",
+            intro_text2: "Our team will respond within <span class='highlighted-word'>48 hours!</span>",
+            share_via: "Share via",
             preferred_language: "Preferred Language",
+            stay_connected: "Stay Connected",
+            select_all_options: "Please select all options",
+            no_job_found: "No matching job found",
             scan_to_apply: "Scan to Apply"
         },
         zh: {
             about_us: "关于我们",
             careers: "职业机会",
             hot_job: "热门职位 🔥",
-            opportunities: "工作机会 🌟",
-            refer_friend: "推荐朋友",
+            opportunities: "机会 🌟",
+            refer_friend: "介绍个朋友",
             stay_connected: "保持联系",
             contact_us: "联系我们",
             language: "语言",
@@ -40,111 +45,138 @@ document.addEventListener('DOMContentLoaded', function() {
             hot_job_description: "查看我们的<strong>\"本周热门职位\"</strong>，加入我们屡获殊荣的团队吧！这个职位提供了绝佳的成长机会、具有竞争力的福利待遇，以及与尖端AI技术合作的机会。立即申请，成为我们追求卓越之旅的一部分！",
             apply_now: "立即申请！",
             find_job: "找到你的理想工作！",
-            choose_language: "选择语言",
-            choose_location: "选择地点",
-            choose_job_type: "选择工作类型",
+            choose_language: "首选语言",
+            choose_location: "选择您的位置",
+            choose_job_type: "选择您的工作类型",
             generate_qr: "生成二维码并立即申请！",
-            intro_text: "我们正在寻找<span class='highlight'>合适的人选</span>",
-            team_response: "我们的团队将在<span class='highlighted-word'>48小时</span>内回复！",
+            intro_text: "我们正在寻找那个<span class='highlight'>合适的人</span>",
+            team_response: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
+            intro_text1: "找到你的完美 <span class='highlight'><br>工作</br></span>",
+            intro_text2: "我们的团队将在<span class='highlighted-word'> 48 小时</span>内回复！",
             share_via: "分享",
             preferred_language: "首选语言",
+            stay_connected: "保持联系",
+            select_all_options: "请选择所有选项",
+            no_job_found: "未找到匹配的工作",
             scan_to_apply: "扫码申请"
         },
         jp: {
             about_us: "会社概要",
             careers: "採用情報",
             hot_job: "ホットジョブ 🔥",
-            opportunities: "求人情報 🌟",
-            refer_friend: "友達を紹介",
-            stay_connected: "つながりを保つ",
+            opportunities: "採用情報 🌟",
+            refer_friend: "友達紹介",
+            stay_connected: "つながりを続ける",
             contact_us: "お問い合わせ",
             language: "言語",
-            hot_job_content: "今週の注目の求人!",
-            hot_job_description: "当社の<strong>「今週の注目の求人」</strong>をチェックして、受賞歴のあるチームに参加しましょう！この役職は、素晴らしい成長機会、競争力のある福利厚生、最先端のAI技術に携わる機会を提供します。今すぐ応募して、私たちの卓越性への旅に参加しましょう！",
+            hot_job_content: "今週の注目のお仕事!",
+            hot_job_description: "当社の<strong>「今週の注目のお仕事」</strong>をチェックして、受賞歴のあるチームに参加しませんか！この職務は、素晴らしい成長の機会、競争力のある福利厚生、そして最先端のAI テクノロジーを活用する機会を提供します。今すぐ応募して、私たちの卓越性への旅の一員になりませんか！",
             apply_now: "今すぐ応募!",
-            find_job: "理想の仕事を見つけよう!",
-            choose_language: "言語を選択",
-            choose_location: "場所を選択",
-            choose_job_type: "職種を選択",
-            generate_qr: "QRコードを生成して今すぐ応募!",
-            intro_text: "私たちは<span class='highlight'>適任者</span>を探しています",
-            team_response: "チームは<span class='highlighted-word'>48時間</span>以内に返信します!",
+            find_job: "理想の仕事を見つける!",
+            choose_language: "勤務地を選択",
+            choose_location: "あなたの場所を選択してください",
+            choose_job_type: "職種を選ぶ",
+            generate_qr: "QRコードを作成し、今すぐご応募ください！",
+            intro_text: "私たちは<span class='highlight'>誰か</span>を探しています",
+            team_response: "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
+            intro_text1: "理想の<span class='highlight'><br>お仕事</br></span>を見つけましょう！",
+            intro_text2: "<span class='highlighted-word'>48時間</span>以内に返信いたします！",
             share_via: "共有",
-            preferred_language: "希望言語",
+            preferred_language: "首選言語",
+            stay_connected: "つながりを続ける",
+            select_all_options: "すべてのオプションを選択してください",
+            no_job_found: "一致する仕事が見つかりません",
             scan_to_apply: "スキャンして応募"
         },
         kr: {
-            about_us: "회사소개",
-            careers: "채용정보",
-            hot_job: "핫잡 🔥",
-            opportunities: "채용기회 🌟",
-            refer_friend: "친구추천",
-            stay_connected: "연락유지",
+            about_us: "회사소개 / About TP",
+            careers: "인재채용 / 커리어",
+            stay_connected: "문의/연락처",
             contact_us: "문의하기",
             language: "언어",
-            hot_job_content: "이번 주 핫잡!",
-            hot_job_description: "우리의 <strong>\"이번 주 핫잡\"</strong>을 확인하고 수상 경력이 있는 팀에 합류하세요! 이 역할은 훌륭한 성장 기회, 경쟁력 있는 혜택 및 최첨단 AI 기술을 사용할 수 있는 기회를 제공합니다. 지금 지원하여 우리의 탁월함을 향한 여정에 동참하세요!",
-            apply_now: "지금 지원하세요!",
-            find_job: "당신에게 딱 맞는 일자리를 찾아보세요!",
+            hot_job: "주간 인기 채용공고",
+            hot_job_description: "주간 인기 채용공고를 확인하고 최고의 팀에 합류하세요!",
+            apply_now: "지원하기",
+            find_job: "여러분의 최고의 직장을 찾으세요!",
             choose_language: "언어 선택",
-            choose_location: "위치 선택",
+            choose_location: "국가/지역 선택",
             choose_job_type: "직무 유형 선택",
-            generate_qr: "QR 코드 생성 및 지금 지원!",
-            intro_text: "우리는 <span class='highlight'>적임자</span>를 찾고 있습니다",
-            team_response: "우리 팀은 <span class='highlighted-word'>48시간</span> 이내에 답변드립니다!",
+            generate_qr: "QR코드 생성 및 지원하기",
+            intro_text: "함께할 인재를 찾습니다.",
+            team_response: "48시간 내 관련 부서에서 응답할 예정입니다.",
+            intro_text1: "여러분의 최고의 <br>직장을</br> 찾으세요!",
+            intro_text2: "우리 팀은 <span class='highlighted-word'>48시간</span> 내에 답변드립니다.",
             share_via: "공유하기",
-            preferred_language: "선호 언어",
+            preferred_language: "선호하는 언어",
+            select_all_options: "모든 옵션을 선택하세요",
+            no_job_found: "일치하는 직업을 찾을 수 없습니다",
             scan_to_apply: "스캔하여 지원"
         },
         my: {
             about_us: "Tentang Kami",
-            careers: "Kerjaya",
-            hot_job: "Kerja Hangat 🔥",
-            opportunities: "Peluang Pekerjaan 🌟",
-            refer_friend: "Rakan Rujuk",
-            stay_connected: "Kekal Berhubung",
+            careers: "Peluang Kerjaya",
+            stay_connected: "Terus Berhubung",
             contact_us: "Hubungi Kami",
             language: "Bahasa",
-            hot_job_content: "Kerja Hangat Minggu Ini!",
-            hot_job_description: "Lihat <strong>\"Kerja Hangat Minggu Ini\"</strong> kami dan sertai pasukan pemenang anugerah kami! Peranan ini menawarkan peluang pertumbuhan yang hebat, faedah yang kompetitif, dan peluang untuk bekerja dengan teknologi AI canggih. Mohon sekarang dan jadilah sebahagian daripada perjalanan kami ke kecemerlangan!",
+            hot_job: "Kerja hangat minggu ini",
+            hot_job_description: "Semak Kerja Hangat Minggu Ini dan sertai pasukan kami!",
             apply_now: "Mohon Sekarang!",
-            find_job: "Cari pekerjaan sempurna anda!",
-            choose_language: "Pilih bahasa",
-            choose_location: "Pilih lokasi",
-            choose_job_type: "Pilih jenis pekerjaan",
-            generate_qr: "Hasilkan Kod QR & Mohon Sekarang!",
-            intro_text: "Kami mencari <span class='highlight'>Yang Satu</span>",
-            team_response: "Pasukan kami akan membalas dalam masa <span class='highlighted-word'>48 jam!</span>",
-            share_via: "Kongsi Melalui",
+            find_job: "Cari pekerjaan impian anda!",
+            choose_language: "Pilih bahasa anda",
+            choose_location: "Pilih lokasi anda",
+            choose_job_type: "Pilih jenis pekerjaan anda",
+            generate_qr: "Jana kod QR dan mohon sekarang!",
+            intro_text: "Kami sedang mencari orang yang sesuai.",
+            team_response: "Pasukan kami akan bertindak balas dalam masa 48 jam!",
+            intro_text1: "Cari pekerjaan<br>terbaik</br>anda!",
+            intro_text2: "Pasukan kami akan bertindak balas dalam <span class='highlighted-word'>48 jam</span>!",
+            share_via: "Kongsi melalui",
             preferred_language: "Bahasa Pilihan",
+            select_all_options: "Sila pilih semua pilihan",
+            no_job_found: "Tiada pekerjaan yang sepadan ditemui",
             scan_to_apply: "Imbas untuk Memohon"
         },
         th: {
             about_us: "เกี่ยวกับเรา",
             careers: "อาชีพ",
-            hot_job: "งานร้อนแรง 🔥",
-            opportunities: "โอกาสในการทำงาน 🌟",
-            refer_friend: "แนะนำเพื่อน",
-            stay_connected: "ติดต่อกันไว้",
+            stay_connected: "เชื่อมต่อกับเรา",
             contact_us: "ติดต่อเรา",
             language: "ภาษา",
-            hot_job_content: "งานร้อนแรงประจำสัปดาห์!",
-            hot_job_description: "ตรวจสอบ<strong>\"งานร้อนแรงประจำสัปดาห์\"</strong>ของเราและเข้าร่วมทีมที่ได้รับรางวัลของเรา! ตำแหน่งนี้เปิดโอกาสในการเติบโตอย่างยอดเยี่ยม สวัสดิการที่แข่งขันได้ และโอกาสในการทำงานกับเทคโนโลยี AI ล้ำสมัย สมัครตอนนี้และเป็นส่วนหนึ่งของการเดินทางสู่ความเป็นเลิศของเรา!",
-            apply_now: "สมัครเลย!",
-            find_job: "หางานในฝันของคุณ!",
-            choose_language: "เลือกภาษา",
-            choose_location: "เลือกสถานที่",
+            hot_job: "ตำแหน่งงานด่วนประจำสัปดาห์",
+            hot_job_description: "ตรวจสอบตำแหน่งงานด่วนประจำสัปดาห์และเข้าร่วมทีมของเรา!",
+            apply_now: "สมัครตอนนี้!",
+            find_job: "หางานที่ใช่สำหรับคุณ!",
+            choose_language: "เลือกภาษาของคุณ",
+            choose_location: "เลือกตำแหน่งที่ตั้ง",
             choose_job_type: "เลือกประเภทงาน",
-            generate_qr: "สร้าง QR Code และสมัครเลย!",
-            intro_text: "เรากำลังตามหา<span class='highlight'>คนที่ใช่</span>",
-            team_response: "ทีมงานของเราจะตอบกลับภายใน<span class='highlighted-word'>48 ชั่วโมง!</span>",
+            generate_qr: "สร้าง QR และสมัครได้เลย",
+            intro_text: "เรากำลังตามหา คนที่ใช่",
+            team_response: "ทีมงานของเราจะตอบกลับภายใน 48 ชั่วโมง!",
+            intro_text1: "หางานที่<br>ดีที่สุด</br>สำหรับคุณ!",
+            intro_text2: "ทีมงานของเราจะตอบกลับใน <span class='highlighted-word'>48 ชั่วโมง</span>!",
             share_via: "แชร์ผ่าน",
             preferred_language: "ภาษาที่ต้องการ",
+            select_all_options: "กรุณาเลือกตัวเลือกทั้งหมด",
+            no_job_found: "ไม่พบงานที่ตรงกับเงื่อนไข",
             scan_to_apply: "สแกนเพื่อสมัคร"
         }
     };
 
-    // Translation function
+    // Initialize variables
+    let jsonData = [];
+    const languageSelect = document.getElementById('language-select');
+    const locationSelect = document.getElementById('location-select');
+    const jobTypeSelect = document.getElementById('job-type-select');
+    const generateBtn = document.getElementById('generate-btn');
+    const applyBtn = document.getElementById('apply-btn');
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Get current language from URL
+    function getLanguageFromUrl() {
+        return urlParams.get('lang') || 'en';
+    }
+
+    // Update content based on language
     function updateContent(language) {
         const langContent = languages[language] || languages['en'];
         
@@ -175,39 +207,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Language dropdown functionality
-    document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-            const selectedLanguage = this.getAttribute('data-lang');
-            updateContent(selectedLanguage);
-            
-            // Update URL with language parameter
-            const urlParams = new URLSearchParams(window.location.search);
-            urlParams.set('lang', selectedLanguage);
-            window.history.replaceState(null, '', `${window.location.pathname}?${urlParams.toString()}`);
-            
-            // Reload job data for the selected language
-            loadJobData(selectedLanguage);
-        });
-    });
-
-    // Get current language from URL or default to English
-    function getLanguageFromUrl() {
-        const params = new URLSearchParams(window.location.search);
-        return params.get('lang') || 'en';
-    }
-
-    // Initialize with current language
-    const currentLanguage = getLanguageFromUrl();
-    updateContent(currentLanguage);
-    // Initialize variables
-    let jsonData = [];
-    const languageSelect = document.getElementById('language-select');
-    const locationSelect = document.getElementById('location-select');
-    const jobTypeSelect = document.getElementById('job-type-select');
-    const generateBtn = document.getElementById('generate-btn');
-
     // Load job data from JSON file
     function loadJobData() {
         fetch('data.json')
@@ -224,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => {
                 console.error('Error loading job data:', error);
-                alert('Failed to load job data. Using default data instead.');
+                alert(languages[getLanguageFromUrl()]?.no_job_found || 'Failed to load job data. Using default data instead.');
                 // Fallback to default data
                 jsonData = [
                     {
@@ -234,7 +233,41 @@ document.addEventListener('DOMContentLoaded', function() {
                         "Evergreen title": "Customer Success Specialist - Japanese - Penang",
                         "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49421/customer-success-specialist---japanese---penang/job?mode=job&iis=LandingPage&iisn="
                     },
-                    // ... (other fallback data)
+                    {
+                        "Positions": "Customer Success Specialist",
+                        "Language": "Korean",
+                        "Location": "Penang",
+                        "Evergreen title": "Customer Success Specialist - Korean - Penang",
+                        "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&iis=LandingPage&iisn="
+                    },
+                    {
+                        "Positions": "Customer Service Representative",
+                        "Language": "English",
+                        "Location": "Kuala Lumpur",
+                        "Evergreen title": "Customer Service Representative - English - KL",
+                        "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49423/customer-service-representative---english---kl/job?mode=job&iis=LandingPage&iisn="
+                    },
+                    {
+                        "Positions": "Technical Support Specialist",
+                        "Language": "Mandarin",
+                        "Location": "Penang",
+                        "Evergreen title": "Technical Support Specialist - Mandarin - Penang",
+                        "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49424/technical-support-specialist---mandarin---penang/job?mode=job&iis=LandingPage&iisn="
+                    },
+                    {
+                        "Positions": "Customer Service Representative",
+                        "Language": "Thai",
+                        "Location": "Bangkok",
+                        "Evergreen title": "Customer Service Representative - Thai - Bangkok",
+                        "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49425/customer-service-representative---thai---bangkok/job?mode=job&iis=LandingPage&iisn="
+                    },
+                    {
+                        "Positions": "Sales Consultant",
+                        "Language": "Malay",
+                        "Location": "Kuala Lumpur",
+                        "Evergreen title": "Sales Consultant - Malay - KL",
+                        "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49426/sales-consultant---malay---kl/job?mode=job&iis=LandingPage&iisn="
+                    }
                 ];
                 populateDropdowns();
                 setHotJob(getLanguageFromUrl());
@@ -315,106 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
         qrModal.show();
     }
 
-    // Generate final URL with UTM parameters
-    function generateFinalURL(baseURL, source, medium) {
-        const url = new URL(baseURL);
-        url.searchParams.set('iis', encodeURIComponent(medium || 'LandingPage'));
-        url.searchParams.set('iisn', encodeURIComponent(source || 'Direct'));
-        return url.toString();
-    }
-
-    // Set hot job based on language
-    function setHotJob(lang) {
-        const hotJobs = {
-            en: jsonData.find(job => job.Language === "English"),
-            zh: jsonData.find(job => job.Language === "Mandarin"),
-            jp: jsonData.find(job => job.Language === "Japanese"),
-            kr: jsonData.find(job => job.Language === "Korean"),
-            my: jsonData.find(job => job.Language === "Malay"),
-            th: jsonData.find(job => job.Language === "Thai")
-        };
-        
-        const hotJob = hotJobs[lang] || jsonData[0];
-        
-        if (hotJob) {
-            document.getElementById('apply-btn').onclick = function(e) {
-                e.preventDefault();
-                window.open(generateFinalURL(hotJob['Evergreen link'], 'Direct', 'LandingPage'), '_blank');
-            };
-        }
-    }
-
-    // Get language from URL
-    function getLanguageFromUrl() {
-        const params = new URLSearchParams(window.location.search);
-        return params.get('lang') || 'en';
-    }
-
-    // Initialize event listeners
-    function initEventListeners() {
-        // Language and location dropdown changes
-        languageSelect.addEventListener('change', updateJobTypes);
-        locationSelect.addEventListener('change', updateJobTypes);
-
-        // Generate QR button click
-        if (generateBtn) {
-            generateBtn.addEventListener('click', function() {
-                const selectedLanguage = languageSelect.value;
-                const selectedLocation = locationSelect.value;
-                const selectedJob = jobTypeSelect.value;
-                
-                if (!selectedLanguage || !selectedLocation || !selectedJob) {
-                    alert(languages[getLanguageFromUrl()]?.select_all_options || 'Please select all options');
-                    return;
-                }
-                
-                const jobData = jsonData.find(item => 
-                    item.Language === selectedLanguage && 
-                    item.Location === selectedLocation && 
-                    item.Positions === selectedJob
-                );
-                
-                if (jobData) {
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const sourceParam = urlParams.get('utm_source') || '';
-                    const mediumParam = urlParams.get('utm_medium') || '';
-                    const finalLink = generateFinalURL(jobData["Evergreen link"], sourceParam, mediumParam);
-                    openQrModal(finalLink);
-                } else {
-                    alert(languages[getLanguageFromUrl()]?.no_job_found || 'No matching job found');
-                }
-            });
-        }
-
-        // Language selector
-        document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const selectedLanguage = this.getAttribute('data-lang');
-                updateContent(selectedLanguage);
-                
-                const urlParams = new URLSearchParams(window.location.search);
-                urlParams.set('lang', selectedLanguage);
-                window.history.replaceState(null, '', `${window.location.pathname}?${urlParams.toString()}`);
-                
-                setHotJob(selectedLanguage);
-            });
-        });
-
-    // Share buttons
-    document.getElementById('share-button-whatsapp').addEventListener('click', function() {
-        const url = encodeURIComponent(document.getElementById('job-url').href);
-        const text = encodeURIComponent(languages[currentLanguage]?.share_job_text || "Check out this job opportunity at Teleperformance!");
-        window.open(`https://wa.me/?text=${text}%20${url}`, '_blank');
-    });
-
-    document.getElementById('share-button-line').addEventListener('click', function() {
-        const url = encodeURIComponent(document.getElementById('job-url').href);
-        const text = encodeURIComponent(languages[currentLanguage]?.share_job_text || "Check out this job opportunity at Teleperformance!");
-        window.open(`https://line.me/R/msg/text/?${text}%0A%0A${url}`, '_blank');
-    });
-
-    // Function to generate final URL with UTM parameters
+    // Generate final URL with UTM parameters (your original working version)
     function generateFinalURL(baseURL, source, medium) {
         let finalURL = new URL(baseURL);
         let iisValue, iisnValue;
@@ -484,18 +418,113 @@ document.addEventListener('DOMContentLoaded', function() {
                 return baseURL;
         }
 
+        // Replace "utm_source=" and "utm_medium=" in source and medium
+        source = source.replace('utm_source=', '');
+        medium = medium.replace('utm_medium=', '');
+
+        finalURL.searchParams.set('mode', 'job');
         finalURL.searchParams.set('iis', encodeURIComponent(iisValue).replace(/%20/g, '+'));
         finalURL.searchParams.set('iisn', encodeURIComponent(iisnValue).replace(/%2B/g, '+'));
 
         return decodeURIComponent(finalURL.toString());
     }
 
-    // Add animation class to elements
-    const animatedElements = document.querySelectorAll('.hero-section, .job-section, .hot-job-card, .find-job-card');
-    animatedElements.forEach((el, index) => {
-        el.style.opacity = '0';
-        setTimeout(() => {
-            el.classList.add('animate-fade-in');
-        }, index * 100);
-    });
+    // Set hot job based on language
+    function setHotJob(lang) {
+        const hotJobs = {
+            en: jsonData.find(job => job.Language === "English"),
+            zh: jsonData.find(job => job.Language === "Mandarin"),
+            jp: jsonData.find(job => job.Language === "Japanese"),
+            kr: jsonData.find(job => job.Language === "Korean"),
+            my: jsonData.find(job => job.Language === "Malay"),
+            th: jsonData.find(job => job.Language === "Thai")
+        };
+        
+        const hotJob = hotJobs[lang] || jsonData[0];
+        
+        if (hotJob && applyBtn) {
+            applyBtn.onclick = function(e) {
+                e.preventDefault();
+                const urlParams = new URLSearchParams(window.location.search);
+                const sourceParam = urlParams.get('utm_source') || '';
+                const mediumParam = urlParams.get('utm_medium') || '';
+                const finalLink = generateFinalURL(hotJob['Evergreen link'], sourceParam, mediumParam);
+                window.open(finalLink, '_blank');
+            };
+        }
+    }
+
+    // Initialize event listeners
+    function initEventListeners() {
+        // Language and location dropdown changes
+        if (languageSelect) languageSelect.addEventListener('change', updateJobTypes);
+        if (locationSelect) locationSelect.addEventListener('change', updateJobTypes);
+
+        // Generate QR button click
+        if (generateBtn) {
+            generateBtn.addEventListener('click', function() {
+                const selectedLanguage = languageSelect.value;
+                const selectedLocation = locationSelect.value;
+                const selectedJob = jobTypeSelect.value;
+                
+                if (!selectedLanguage || !selectedLocation || !selectedJob) {
+                    alert(languages[getLanguageFromUrl()]?.select_all_options || 'Please select all options');
+                    return;
+                }
+                
+                const jobData = jsonData.find(item => 
+                    item.Language === selectedLanguage && 
+                    item.Location === selectedLocation && 
+                    item.Positions === selectedJob
+                );
+                
+                if (jobData) {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const sourceParam = urlParams.get('utm_source') || '';
+                    const mediumParam = urlParams.get('utm_medium') || '';
+                    const finalLink = generateFinalURL(jobData["Evergreen link"], sourceParam, mediumParam);
+                    openQrModal(finalLink);
+                } else {
+                    alert(languages[getLanguageFromUrl()]?.no_job_found || 'No matching job found');
+                }
+            });
+        }
+
+        // Language selector
+        document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const selectedLanguage = this.getAttribute('data-lang');
+                updateContent(selectedLanguage);
+                
+                const urlParams = new URLSearchParams(window.location.search);
+                urlParams.set('lang', selectedLanguage);
+                window.history.replaceState(null, '', `${window.location.pathname}?${urlParams.toString()}`);
+                
+                setHotJob(selectedLanguage);
+            });
+        });
+
+        // Share buttons
+        document.getElementById('share-button-whatsapp')?.addEventListener('click', function() {
+            const url = encodeURIComponent(document.getElementById('job-url').href);
+            const text = encodeURIComponent("Check out this job opportunity at Teleperformance!");
+            window.open(`https://wa.me/?text=${text}%20${url}`, '_blank');
+        });
+
+        document.getElementById('share-button-line')?.addEventListener('click', function() {
+            const url = encodeURIComponent(document.getElementById('job-url').href);
+            const text = encodeURIComponent("Check out this job opportunity at Teleperformance!");
+            window.open(`https://line.me/R/msg/text/?${text}%0A%0A${url}`, '_blank');
+        });
+    }
+
+    // Initialize everything
+    function init() {
+        updateContent(getLanguageFromUrl());
+        loadJobData();
+        initEventListeners();
+    }
+
+    init();
 });
