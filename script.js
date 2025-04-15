@@ -204,47 +204,102 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize with current language
     const currentLanguage = getLanguageFromUrl();
     updateContent(currentLanguage);
-            // Ensure jsonData is available
-            if (!jsonData) {
-                alert('Failed to fetch job data. Please try again later.');
-                return;
-            }
+  
+     // Initialize variables
+    let jsonData = [];
+    const languageSelect = document.getElementById('language-select');
+    const locationSelect = document.getElementById('location-select');
+    const jobTypeSelect = document.getElementById('job-type-select');
+    const generateBtn = document.getElementById('generate-btn');
 
-            const jobData = jsonData.find(item => item.Language === selectedLanguage && item.Location === selectedLocation && item.Positions === selectedJob);
-
-            if (jobData) {
-                // Get utm_source and utm_medium from current URL
-                const urlParams = new URLSearchParams(window.location.search);
-                const sourceParam = urlParams.get('utm_source') || '';
-                const mediumParam = urlParams.get('utm_medium') || '';
-
-                const finalLink = generateFinalURL(jobData["Evergreen link"], sourceParam, mediumParam);
-                openQrModal(finalLink);
-            } else {
-                alert('Error! Please remember to select all options before you generate your QR code.');
-            }
-        });
-    } else {
-        console.error('#generate-btn button not found.');
+    // Load job data from JSON file
+    function loadJobData() {
+        fetch('data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                jsonData = data;
+                populateDropdowns();
+                setHotJob(getLanguageFromUrl());
+            })
+            .catch(error => {
+                console.error('Error loading job data:', error);
+                alert('Failed to load job data. Using default data instead.');
+                // Fallback to default data
+                jsonData = [
+                    {
+                        "Positions": "Customer Success Specialist",
+                        "Language": "Japanese",
+                        "Location": "Penang",
+                        "Evergreen title": "Customer Success Specialist - Japanese - Penang",
+                        "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49421/customer-success-specialist---japanese---penang/job?mode=job&iis=LandingPage&iisn="
+                    },
+                    // ... (other fallback data)
+                ];
+                populateDropdowns();
+                setHotJob(getLanguageFromUrl());
+            });
     }
 
-    // Fetch JSON data (assuming this part remains unchanged)
-    fetch('data.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to fetch job data.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            jsonData = data; // Assign fetched data to jsonData
-        })
-        .catch(error => {
-            console.error('Error fetching job data:', error);
-            alert('Failed to fetch job data. Please try again later.');
-        });
-});
+    // Populate dropdowns with job data
+    function populateDropdowns() {
+        // Clear existing options
+        languageSelect.innerHTML = '<option value="" disabled selected>' + (languages[getLanguageFromUrl()]?.choose_language || 'Choose your language') + '</option>';
+        locationSelect.innerHTML = '<option value="" disabled selected>' + (languages[getLanguageFromUrl()]?.choose_location || 'Choose your location') + '</option>';
+        jobTypeSelect.innerHTML = '<option value="" disabled selected>' + (languages[getLanguageFromUrl()]?.choose_job_type || 'Choose your job type') + '</option>';
 
+        // Get unique languages, locations
+        const uniqueLangs = [...new Set(jsonData.map(item => item.Language))];
+        const uniqueLocs = [...new Set(jsonData.map(item => item.Location))];
+
+        // Populate language dropdown
+        uniqueLangs.forEach(lang => {
+            const option = document.createElement('option');
+            option.value = lang;
+            option.textContent = lang;
+            languageSelect.appendChild(option);
+        });
+
+        // Populate location dropdown
+        uniqueLocs.forEach(loc => {
+            const option = document.createElement('option');
+            option.value = loc;
+            option.textContent = loc;
+            locationSelect.appendChild(option);
+        });
+    }
+
+    // Update job types when language or location changes
+    function updateJobTypes() {
+        const selectedLanguage = languageSelect.value;
+        const selectedLocation = locationSelect.value;
+        
+        // Clear existing options
+        jobTypeSelect.innerHTML = '<option value="" disabled selected>' + (languages[getLanguageFromUrl()]?.choose_job_type || 'Choose your job type') + '</option>';
+        
+        if (selectedLanguage && selectedLocation) {
+            // Filter jobs based on selections
+            const filteredJobs = jsonData.filter(item => 
+                item.Language === selectedLanguage && 
+                item.Location === selectedLocation
+            );
+            
+            // Get unique job types
+            const jobTypes = [...new Set(filteredJobs.map(item => item.Positions))];
+            
+            // Populate job types dropdown
+            jobTypes.forEach(job => {
+                const option = document.createElement('option');
+                option.value = job;
+                option.textContent = job;
+                jobTypeSelect.appendChild(option);
+            });
+        }
+    }
 
 
 
