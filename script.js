@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize with current language
     const currentLanguage = getLanguageFromUrl();
     updateContent(currentLanguage);
-     // Ensure jsonData is available
+            // Ensure jsonData is available
             if (!jsonData) {
                 alert('Failed to fetch job data. Please try again later.');
                 return;
@@ -227,44 +227,23 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error('#generate-btn button not found.');
     }
-    // Job data and dropdown functionality
-    let jsonData = [];
-    const languageSelect = document.getElementById('language-select');
-    const locationSelect = document.getElementById('location-select');
-    const jobTypeSelect = document.getElementById('job-type-select');
 
-    async function loadJobData(lang = 'en') {
-    try {
-        const response = await fetch('data.json');
-        if (!response.ok) throw new Error('Failed to fetch job data');
-        jsonData = await response.json();
-         .then(data => {
+    // Fetch JSON data (assuming this part remains unchanged)
+    fetch('data.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch job data.');
+            }
+            return response.json();
+        })
+        .then(data => {
             jsonData = data; // Assign fetched data to jsonData
         })
         .catch(error => {
             console.error('Error fetching job data:', error);
             alert('Failed to fetch job data. Please try again later.');
         });
-        populateDropdowns();
-        setHotJob(lang);
-    } catch (error) {
-        console.error('Error loading job data:', error);
-        // Fallback to static data
-        jsonData = [
-            // ... (keep your fallback data here)
-        ];
-        populateDropdowns();
-        setHotJob(lang);
-    } catch (error) {
-            console.error('Error loading job data:', error);
-            // Fallback to static data or show error message
-            populateDropdowns();
-        }
-}
-
-
-
-
+});
 
 
 
