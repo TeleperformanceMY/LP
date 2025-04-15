@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         th: {
             about_us: "เกี่ยวกับเรา",
             careers: "อาชีพ",
-            hot_job: "งานร้อนแรงประจำสัปดาห์ 🔥",
+            hot_job: "งานร้อนแรง 🔥",
             opportunities: "โอกาสในการทำงาน 🌟",
             refer_friend: "แนะนำเพื่อน",
             stay_connected: "ติดต่อกันไว้",
@@ -140,10 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             team_response: "ทีมงานของเราจะตอบกลับภายใน<span class='highlighted-word'>48 ชั่วโมง!</span>",
             share_via: "แชร์ผ่าน",
             preferred_language: "ภาษาที่ต้องการ",
-            scan_to_apply: "สแกนเพื่อสมัคร",
-            select_all_options: "กรุณาเลือกตัวเลือกทั้งหมด",
-            no_job_found: "ไม่พบงานที่ตรงกับเงื่อนไข",
-            share_job_text: "ดูโอกาสในการทำงานที่ Teleperformance!"
+            scan_to_apply: "สแกนเพื่อสมัคร"
         }
     };
 
@@ -204,8 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize with current language
     const currentLanguage = getLanguageFromUrl();
     updateContent(currentLanguage);
-  
-     // Initialize variables
+    // Initialize variables
     let jsonData = [];
     const languageSelect = document.getElementById('language-select');
     const locationSelect = document.getElementById('location-select');
@@ -301,7 +297,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Generate QR code and show modal
+    function openQrModal(url) {
+        const qr = new QRious({
+            element: document.getElementById('qr-code'),
+            value: url,
+            size: 200,
+            background: 'white',
+            foreground: 'black'
+        });
+        
+        const jobUrlElement = document.getElementById('job-url');
+        jobUrlElement.href = url;
+        jobUrlElement.textContent = url;
+        
+        const qrModal = new bootstrap.Modal(document.getElementById('qrModal'));
+        qrModal.show();
+    }
 
+    // Generate final URL with UTM parameters
+    function generateFinalURL(baseURL, source, medium) {
+        const url = new URL(baseURL);
+        url.searchParams.set('iis', encodeURIComponent(medium || 'LandingPage'));
+        url.searchParams.set('iisn', encodeURIComponent(source || 'Direct'));
+        return url.toString();
+    }
 
     // Set hot job based on language
     function setHotJob(lang) {
@@ -319,115 +339,67 @@ document.addEventListener('DOMContentLoaded', function() {
         if (hotJob) {
             document.getElementById('apply-btn').onclick = function(e) {
                 e.preventDefault();
-                window.open(generateFinalURL(hotJob['Evergreen link'], 'LandingPage', 'social'), '_blank');
+                window.open(generateFinalURL(hotJob['Evergreen link'], 'Direct', 'LandingPage'), '_blank');
             };
         }
     }
 
-    // Populate dropdowns from JSON data
-    function populateDropdowns() {
-        // Get unique values for each dropdown
-        const languages = [...new Set(jsonData.map(item => item.Language))];
-        const locations = [...new Set(jsonData.map(item => item.Location))];
-        
-        // Clear existing options
-        languageSelect.innerHTML = '<option value="" disabled selected>' + (languages[currentLanguage]?.choose_language || 'Choose your language') + '</option>';
-        locationSelect.innerHTML = '<option value="" disabled selected>' + (languages[currentLanguage]?.choose_location || 'Choose your location') + '</option>';
-        jobTypeSelect.innerHTML = '<option value="" disabled selected>' + (languages[currentLanguage]?.choose_job_type || 'Choose your job type') + '</option>';
-        
-        // Populate language dropdown
-        languages.forEach(lang => {
-            const option = document.createElement('option');
-            option.value = lang;
-            option.textContent = lang;
-            languageSelect.appendChild(option);
-        });
-        
-        // Populate location dropdown
-        locations.forEach(loc => {
-            const option = document.createElement('option');
-            option.value = loc;
-            option.textContent = loc;
-            locationSelect.appendChild(option);
-        });
+    // Get language from URL
+    function getLanguageFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('lang') || 'en';
     }
 
-    // Update job types when language or location changes
-    function updateJobTypes() {
-        const selectedLanguage = languageSelect.value;
-        const selectedLocation = locationSelect.value;
-        
-        // Clear existing options
-        jobTypeSelect.innerHTML = '<option value="" disabled selected>' + (languages[currentLanguage]?.choose_job_type || 'Choose your job type') + '</option>';
-        
-        if (selectedLanguage && selectedLocation) {
-            // Filter jobs based on selections
-            const jobs = jsonData.filter(item => 
-                item.Language === selectedLanguage && 
-                item.Location === selectedLocation
-            );
-            
-            // Get unique job types
-            const jobTypes = [...new Set(jobs.map(item => item.Positions))];
-            
-            // Populate job types dropdown
-            jobTypes.forEach(job => {
-                const option = document.createElement('option');
-                option.value = job;
-                option.textContent = job;
-                jobTypeSelect.appendChild(option);
+    // Initialize event listeners
+    function initEventListeners() {
+        // Language and location dropdown changes
+        languageSelect.addEventListener('change', updateJobTypes);
+        locationSelect.addEventListener('change', updateJobTypes);
+
+        // Generate QR button click
+        if (generateBtn) {
+            generateBtn.addEventListener('click', function() {
+                const selectedLanguage = languageSelect.value;
+                const selectedLocation = locationSelect.value;
+                const selectedJob = jobTypeSelect.value;
+                
+                if (!selectedLanguage || !selectedLocation || !selectedJob) {
+                    alert(languages[getLanguageFromUrl()]?.select_all_options || 'Please select all options');
+                    return;
+                }
+                
+                const jobData = jsonData.find(item => 
+                    item.Language === selectedLanguage && 
+                    item.Location === selectedLocation && 
+                    item.Positions === selectedJob
+                );
+                
+                if (jobData) {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const sourceParam = urlParams.get('utm_source') || '';
+                    const mediumParam = urlParams.get('utm_medium') || '';
+                    const finalLink = generateFinalURL(jobData["Evergreen link"], sourceParam, mediumParam);
+                    openQrModal(finalLink);
+                } else {
+                    alert(languages[getLanguageFromUrl()]?.no_job_found || 'No matching job found');
+                }
             });
         }
-    }
 
-    // Initialize dropdowns
-    loadJobData(currentLanguage);
-    
-    // Add event listeners
-    languageSelect.addEventListener('change', updateJobTypes);
-    locationSelect.addEventListener('change', updateJobTypes);
-
-    // Generate QR code functionality
-    document.getElementById('generate-btn').addEventListener('click', function() {
-        const language = languageSelect.value;
-        const location = locationSelect.value;
-        const jobType = jobTypeSelect.value;
-        
-        if (!language || !location || !jobType) {
-            alert(languages[currentLanguage]?.select_all_options || 'Please select all options');
-            return;
-        }
-        
-        // Find the matching job
-        const job = jsonData.find(item => 
-            item.Language === language && 
-            item.Location === location && 
-            item.Positions === jobType
-        );
-        
-        if (job) {
-            // Generate QR code
-            const qr = new QRious({
-                element: document.getElementById('qr-code'),
-                value: job['Evergreen link'],
-                size: 200,
-                background: 'white',
-                foreground: 'black',
-                level: 'H'
+        // Language selector
+        document.querySelectorAll('.dropdown-item[data-lang]').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const selectedLanguage = this.getAttribute('data-lang');
+                updateContent(selectedLanguage);
+                
+                const urlParams = new URLSearchParams(window.location.search);
+                urlParams.set('lang', selectedLanguage);
+                window.history.replaceState(null, '', `${window.location.pathname}?${urlParams.toString()}`);
+                
+                setHotJob(selectedLanguage);
             });
-            
-            // Set job URL
-            const jobUrlElement = document.getElementById('job-url');
-            jobUrlElement.href = job['Evergreen link'];
-            jobUrlElement.textContent = job['Evergreen title'];
-            
-            // Show modal
-            const qrModal = new bootstrap.Modal(document.getElementById('qrModal'));
-            qrModal.show();
-        } else {
-            alert(languages[currentLanguage]?.no_job_found || 'No matching job found');
-        }
-    });
+        });
 
     // Share buttons
     document.getElementById('share-button-whatsapp').addEventListener('click', function() {
