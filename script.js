@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         th: {
             about_us: "เกี่ยวกับเรา",
             careers: "อาชีพ",
-            hot_job: "งานร้อนแรง 🔥",
+            hot_job: "งานร้อนแรงประจำสัปดาห์ 🔥",
             opportunities: "โอกาสในการทำงาน 🌟",
             refer_friend: "แนะนำเพื่อน",
             stay_connected: "ติดต่อกันไว้",
@@ -140,7 +140,10 @@ document.addEventListener('DOMContentLoaded', function() {
             team_response: "ทีมงานของเราจะตอบกลับภายใน<span class='highlighted-word'>48 ชั่วโมง!</span>",
             share_via: "แชร์ผ่าน",
             preferred_language: "ภาษาที่ต้องการ",
-            scan_to_apply: "สแกนเพื่อสมัคร"
+            scan_to_apply: "สแกนเพื่อสมัคร",
+            select_all_options: "กรุณาเลือกตัวเลือกทั้งหมด",
+            no_job_found: "ไม่พบงานที่ตรงกับเงื่อนไข",
+            share_job_text: "ดูโอกาสในการทำงานที่ Teleperformance!"
         }
     };
 
@@ -208,70 +211,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const locationSelect = document.getElementById('location-select');
     const jobTypeSelect = document.getElementById('job-type-select');
 
-    // Load job data from JSON
     async function loadJobData(lang = 'en') {
-        try {
-            // In a real implementation, you would fetch from an actual JSON file
-            // const response = await fetch(`data-${lang}.json`);
-            // if (!response.ok) throw new Error('Network response was not ok');
-            // jsonData = await response.json();
-            
-            // For demo purposes, using hardcoded data
-            jsonData = [
-                {
-                    "Positions": "Customer Success Specialist",
-                    "Language": "Japanese",
-                    "Location": "Penang",
-                    "Evergreen title": "Customer Success Specialist - Japanese - Penang",
-                    "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49421/customer-success-specialist---japanese---penang/job?mode=job&iis=LandingPage&iisn="
-                },
-                {
-                    "Positions": "Customer Success Specialist",
-                    "Language": "Korean",
-                    "Location": "Penang",
-                    "Evergreen title": "Customer Success Specialist - Korean - Penang",
-                    "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49422/customer-success-specialist---korean---penang/job?mode=job&iis=LandingPage&iisn="
-                },
-                {
-                    "Positions": "Customer Service Representative",
-                    "Language": "English",
-                    "Location": "Kuala Lumpur",
-                    "Evergreen title": "Customer Service Representative - English - KL",
-                    "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49423/customer-service-representative---english---kl/job?mode=job&iis=LandingPage&iisn="
-                },
-                {
-                    "Positions": "Technical Support Specialist",
-                    "Language": "Mandarin",
-                    "Location": "Penang",
-                    "Evergreen title": "Technical Support Specialist - Mandarin - Penang",
-                    "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49424/technical-support-specialist---mandarin---penang/job?mode=job&iis=LandingPage&iisn="
-                },
-                {
-                    "Positions": "Customer Service Representative",
-                    "Language": "Thai",
-                    "Location": "Bangkok",
-                    "Evergreen title": "Customer Service Representative - Thai - Bangkok",
-                    "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49425/customer-service-representative---thai---bangkok/job?mode=job&iis=LandingPage&iisn="
-                },
-                {
-                    "Positions": "Sales Consultant",
-                    "Language": "Malay",
-                    "Location": "Kuala Lumpur",
-                    "Evergreen title": "Sales Consultant - Malay - KL",
-                    "Evergreen link": "https://careerseng-teleperformance.icims.com/jobs/49426/sales-consultant---malay---kl/job?mode=job&iis=LandingPage&iisn="
-                }
-            ];
-            
-            populateDropdowns();
-            
-            // Set hot job based on language
-            setHotJob(lang);
-        } catch (error) {
+    try {
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error('Network response was not ok');
+        jsonData = await response.json();
+        populateDropdowns();
+        setHotJob(lang);
+    } catch (error) {
+        console.error('Error loading job data:', error);
+        // Fallback to static data
+        jsonData = [
+            // ... (keep your fallback data here)
+        ];
+        populateDropdowns();
+        setHotJob(lang);
+    } catch (error) {
             console.error('Error loading job data:', error);
             // Fallback to static data or show error message
             populateDropdowns();
         }
-    }
+}
 
     // Set hot job based on language
     function setHotJob(lang) {
