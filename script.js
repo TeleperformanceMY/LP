@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
         zh: {
             about_us: "关于我们",
             careers: "职业机会",
-            hot_job: "热门职位 🔥",
+            hot_jobMY: "热门职位 马来西亚🔥",
+            hot_jobTH: "热门职位 泰国🔥",
             opportunities: "机会 🌟",
             refer_friend: "介绍个朋友🌟",
             stay_connected: "保持联系",
@@ -58,7 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
         jp: {
             about_us: "会社概要",
             careers: "採用情報",
-            hot_job: "ホットジョブ 🔥",
+            hot_jobMY: "ホットジョブ マレーシア🔥",
+            hot_jobTH: "ホットジョブ タイ🔥",
             opportunities: "求人情報 🌟",
             refer_friend: "友達を紹介🌟",
             stay_connected: "つながりを保つ",
@@ -83,7 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
         kr: {
             about_us: "회사소개",
             careers: "채용정보",
-            hot_job: "핫잡 🔥",
+            hot_jobMY: "핫잡 말레이시아🔥",
+            hot_jobTH: "핫잡 태국🔥",
             opportunities: "채용기회 🌟",
             refer_friend: "친구추천🌟",
             stay_connected: "연락유지",
@@ -108,7 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
         my: {
             about_us: "Tentang Kami",
             careers: "Peluang Kerjaya",
-            hot_job: "Kerja Hangat 🔥",
+            hot_jobMY: "Kerja Hangat MALAYSIA🔥",
+            hot_jobTH: "Kerja Hangat THAILAND🔥",
             opportunities: "Peluang Pekerjaan 🌟",
             refer_friend: "Rakan Rujuk🌟",
             stay_connected: "Terus Berhubung",
@@ -133,7 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
         th: {
             about_us: "เกี่ยวกับเรา",
             careers: "อาชีพ",
-            hot_job: "งานร้อนแรง 🔥",
+            hot_job: "งานร้อนแรง มาเลเซีย🔥",
+            hot_job: "งานร้อนแรง ไทย🔥",
             opportunities: "โอกาสในการทำงาน 🌟",
             refer_friend: "แนะนำเพื่อน🌟",
             stay_connected: "ติดต่อกันไว้",
